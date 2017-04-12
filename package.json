@@ -1,0 +1,23 @@
+{
+  "name": "plane-icon-theme",
+  "version": "1.0.0",
+  "description": "Is a modern freedesktop.org compatible icon theme.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wfpaisa/plane-icon-theme.git"
+  },
+  "keywords": [
+    "plane-icon-theme",
+    "icon-theme"
+  ],
+  "author": "@wfpaisa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wfpaisa/plane-icon-theme/issues"
+  },
+  "homepage": "https://github.com/wfpaisa/plane-icon-theme#readme"
+}
