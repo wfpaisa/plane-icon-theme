@@ -19,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/wfpaisa/plane-icon-theme/issues"
   },
-  "homepage": "https://github.com/wfpaisa/plane-icon-theme#readme"
+  "homepage": "https://github.com/wfpaisa/plane-icon-theme#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-run": "^1.7.1",
+    "map-stream": "0.0.7",
+    "inkscape": "^1.1.0"
+  }
 }
