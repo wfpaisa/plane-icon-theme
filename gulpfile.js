@@ -15,6 +15,14 @@ const exec = require('child_process').exec;
 //
 // inkscape more info -> https://inkscape.org/es/doc/inkscape-man.html
 
+
+/**
+ * Render the object from a SVG file to PNG in a path
+ *
+ * @param      {string}  FILE_FROM  The file from (?/xx.svg)
+ * @param      {string}  FILE_TO    The file to PNG (?/xx.png)
+ * @param      {string}  OBJECT_ID  The object id (icon-32)
+ */
 function svgToPng(FILE_FROM, FILE_TO, OBJECT_ID) {
     var renderSVG = `inkscape --export-id=${OBJECT_ID} --export-id-only --export-png=${FILE_TO} ${FILE_FROM}`;
     exec(renderSVG, (err, stdout, stderr) => {
@@ -28,8 +36,17 @@ function svgToPng(FILE_FROM, FILE_TO, OBJECT_ID) {
     });
 }
 
-// Prepared to render icon
-// 
+
+/**
+ * From SVG file path
+ * 0. Check if is svg file.
+ * 1. Read the file.
+ * 2. Extract the all objects that start with 'icon-' to array
+ * 3. Create folders for each object of array
+ * 4. Render the object to png file
+ *
+ * @param      {string}  FILE_PATH  The file path (?/xx.svg)
+ */
 function renderIcon(FILE_PATH) {
     var FILE_NAME = path.basename(FILE_PATH, '.svg'),
         FILE_DIR = path.dirname(FILE_PATH).split(__dirname + '/src/').pop();
@@ -88,7 +105,9 @@ function renderIcon(FILE_PATH) {
 }
 
 
-
+/**
+ * Start tasks
+ */
 gulp.task('default', function() {
     gulp.src('./src/**/*')
         .pipe(map(function(file, callback) {
@@ -100,9 +119,7 @@ gulp.task('default', function() {
                 if (fs.statSync(file.path).isFile() &&  (path.extname(file.path) == '.svg')){
                     renderIcon(file.path);
                     callback(null, null)
-                } 
-
-                
+                }   
 
             // }
 
