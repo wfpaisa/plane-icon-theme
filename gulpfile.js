@@ -200,15 +200,15 @@ gulp.task('link', function(cb) {
 =            Copy directories            =
 ==========================================*/
 gulp.task('copy', function(cb) {
-	
-	exec('cp -R ./plane /usr/share/icons/plane && cp -R ./plane-dark /usr/share/icons/plane-dark ',(err,stdout,stderr)=>{
+	exec('rm -R /usr/share/icons/plane /usr/share/icons/plane-dark', (err, stdout, stderr) => {
+		exec('cp -R ./plane /usr/share/icons/plane && cp -R ./plane-dark /usr/share/icons/plane-dark ',(err,stdout,stderr)=>{
 
-	    if (err) return cb(err);
-	    if (stderr) return cb(stderr);
-	    
-	    cb();
+		    if (err) return cb(err);
+		    if (stderr) return cb(stderr);
+		    
+		    cb();
+		});
 	});
-
 })
 
 
