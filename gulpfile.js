@@ -1,19 +1,21 @@
 "use strict";
 
-var fs = require('fs');
-var path = require('path');
-var gulp = require('gulp');
-var map = require('map-stream')
-const exec = require('child_process').exec;
+const fs 	= require('fs'),
+	path 	= require('path'),
+	gulp 	= require('gulp'),
+	map		= require('map-stream'),
+	exec	= require('child_process').exec,
+	watch 	= require('gulp-watch');
+
 
 /**
  * Render the object from a SVG file to PNG in a path
- * 
  * https://inkscape.org/es/doc/inkscape-man.html
  *
- * @param      {string}  FILE_FROM  The file from (?/xx.svg)
- * @param      {string}  PNG_NAME    The file to PNG (?/xx.png)
- * @param      {string}  OBJECT_ID  The object id (icon-32)
+ * @param      {string}    filePath  path svg file
+ * @param      {string}    objectId  Name of object in svg file: folder_128
+ * @param      {string}    pngName   Path with name to render file icon: app/128/folder.png
+ * @param      {Function}  cb        callback
  */
 function svgToPng(filePath, objectId, pngName, cb) {
 
@@ -23,7 +25,7 @@ function svgToPng(filePath, objectId, pngName, cb) {
 
 		if (err) return cb(err);
 
-		console.log(`Render: ${pngName}`)
+		console.log(`${filePath} => ${pngName}`)
 
 		cb();
 	});
@@ -36,7 +38,8 @@ function svgToPng(filePath, objectId, pngName, cb) {
  *
  * @param      {obj}       objects   A object with all name ids {icon:64}
  * @param      {string}    filePath  The file path
- * @return     {Function}  callback
+ * @param      {Function}  cb        callback
+ * @return     {err}       If is err.
  */
 function createSizeFolder(objects, filePath, cb) {
 
@@ -133,83 +136,12 @@ function getObjInSvg(filePath, cb) {
 
 
 
-/**
- * From SVG file path
- * 0. Check if is svg file.
- * 1. Read the file.
- * 2. Extract the all objects that start with 'icon-' to array
- * 3. Create folders for each object of array
- * 4. Render the object to png file
- *
- * @param      {string}  FILE_PATH  The file path (?/xx.svg)
- */
-function renderIcon(FILE_PATH, cb) {
-
-
-	var FILE_NAME = path.basename(FILE_PATH, '.svg'),
-		FILE_DIR = path.dirname(FILE_PATH).split(__dirname + '/src/').pop();
-
-	// Only svg files
-	if (path.extname(FILE_PATH) != '.svg') return cb
-
-	// Obtein all objects from svg icon
-	var GET_OBJECTS_ICON = new Promise(function(resolve, reject) {
-
-		var OBJECTS_ICON = `inkscape -S "${FILE_PATH}"`;
-
-		// Get all objects from svg file
-		exec(OBJECTS_ICON, (err, stdout, stderr) => {
-
-			if (err) reject(err);
-			if (stderr) reject(stderr);
-
-			var re = /\n(.{2,})_([0-9]{2,}),/g,
-				matches = {};
-
-			stdout.replace(re, (match, $1, $2) => {
-				matches[$1] = $2
-			});
-
-			resolve(matches);
-		});
-
-	})
-
-	GET_OBJECTS_ICON.then(function(OBJECTS) {
-
-
-		for (const KEY in OBJECTS) {
-
-			var PNG_NAME = KEY === 'icon' ? `./${FILE_DIR}/${OBJECTS[KEY]}/${FILE_NAME}.png` : `./${FILE_DIR}/${OBJECTS[KEY]}/${KEY}.png`,
-				DIR_TO = `./${FILE_DIR}/${OBJECTS[KEY]}`,
-				OBJECT_ID = `${KEY}_${OBJECTS[KEY]}`;
-
-
-			createFolder(FILE_PATH, PNG_NAME, DIR_TO, OBJECT_ID, function(err) {
-				if (err) return cb(err);
-
-				cb()
-			});
-
-		}
-
-		cb(null, OBJECTS);
-
-	}, function(err) {
-
-		cb(err)
-
-	})
-
-}
-
-
 /*==========================================
-=            Remove directories            =
+=            Clean directories            =
 ==========================================*/
 gulp.task('clean', function(cb) {
 	// Clean directories
-	exec('rm -R ./plane ./plane-dark && mkdir ./plane ./plane-dark', (err, stdout, stderr) => {
+	exec('rm -R ./plane ./plane-dark /usr/share/icons/plane /usr/share/icons/plane-dark && mkdir ./plane ./plane-dark', (err, stdout, stderr) => {
 		cb(null)
 	});
 })
@@ -227,12 +159,6 @@ gulp.task('createIcon', ['clean'], function(cb) {
 			// Only svg files
 			if (fs.statSync(file.path).isFile() && (path.extname(file.path) == '.svg')) {
 
-				// // Render icons
-				// renderIcon(file.path,function(err){
-				//     if(err) return cb(err)
-
-				//     callback();
-				// });
 
 				// Start process to create icons
 				getObjInSvg(file.path, function(err) {
@@ -249,32 +175,72 @@ gulp.task('createIcon', ['clean'], function(cb) {
 		.pipe(gulp.dest(__dirname))
 		.on('end', cb);
 
+})
 
 
+/*==========================================
+=            Link directories            =
+==========================================*/
+gulp.task('link', function(cb) {
+	// Clean directories
+	exec('rm -R /usr/share/icons/plane /usr/share/icons/plane-dark', (err, stdout, stderr) => {
+		// exec('cp -R ./plane /usr/share/icons/plane && cp -R ./plane-dark /usr/share/icons/plane-dark ',(err,stdout,stderr)=>{
+		exec(`ln -s ${__dirname}/plane /usr/share/icons/plane && ln -s ${__dirname}/plane-dark /usr/share/icons/plane-dark`,(err,stdout,stderr)=>{
+
+		    if (err) return cb(err);
+		    if (stderr) return cb(stderr);
+		    
+		    cb();
+		});
+	});
 })
 
 
 /*==========================================
 =            Copy directories            =
 ==========================================*/
-gulp.task('copy', ['createIcon'], function(cb) {
-	// Clean directories
-	// exec('cp -R ./plane /usr/share/icons/plane && cp -R ./plane-dark /usr/share/icons/plane-dark ',(err,stdout,stderr)=>{
+gulp.task('copy', function(cb) {
+	
+	exec('cp -R ./plane /usr/share/icons/plane && cp -R ./plane-dark /usr/share/icons/plane-dark ',(err,stdout,stderr)=>{
 
+	    if (err) return cb(err);
+	    if (stderr) return cb(stderr);
+	    
+	    cb();
+	});
 
-	//     if (err) console.log(err);
-	//     if (stderr) console.log(stderr);
-
-	//     console.log('-------Copy--------')
-	//     cb(null)
-	// });
-	cb(null);
 })
+
+
+/*==========================================
+=            Watch files            =
+==========================================*/
+gulp.task('watch', function () {
+
+	return watch('./src/**/*', function (file) {
+
+		// Only svg files
+		if (fs.statSync(file.path).isFile() && (path.extname(file.path) == '.svg')) {
+
+
+			// Start process to create icons
+			getObjInSvg(file.path, function(err) {
+				if (err) return callback(err)
+
+				
+			})
+
+		
+		} 
+
+	});
+});
+
 
 
 /*===========================================
 =            Gulpt default start            =
 ===========================================*/
-gulp.task('default', ['copy'], function() {
+gulp.task('default', ['createIcon'], function() {
 
 });

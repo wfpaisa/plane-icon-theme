@@ -23,6 +23,7 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
-    "map-stream": "0.0.7",
+    "gulp-watch": "^4.3.11",
+    "map-stream": "0.0.7"
   }
 }
