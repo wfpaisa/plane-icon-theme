@@ -19,7 +19,7 @@ const fs 	= require('fs'),
  */
 function svgToPng(filePath, objectId, pngName, cb) {
 
-	let renderSVG = `inkscape --export-id=${objectId} --export-id-only --export-png=${pngName} "${filePath}" --export-area-snap`;
+	let renderSVG = `inkscape --export-id=${objectId} --export-id-only --export-png="${pngName}" "${filePath}"`;
 	
 	exec(renderSVG, (err, stdout, stderr) => {
 
@@ -36,14 +36,14 @@ function svgToPng(filePath, objectId, pngName, cb) {
 /**
  * Create all possible folder sizes from id name from svg file
  *
- * @param      {obj}       objects   A object with all name ids {icon:64}
+ * @param      {Array}     Array   A array with all names and sizes [{key:'icon', size:'64'}]
  * @param      {string}    filePath  The file path
  * @param      {Function}  cb        callback
  * @return     {err}       If is err.
  */
-function createSizeFolder(objects, filePath, cb) {
+function createSizeFolder(arrayIds, filePath, cb) {
 
-	let count = Object.keys(objects).length;
+	let count = arrayIds.length;
 
 
 	// Loop async of create directories
@@ -52,12 +52,12 @@ function createSizeFolder(objects, filePath, cb) {
 		// Directory where is the svg file.
 		let fileDir = path.dirname(filePath).split(__dirname + '/src/').pop();
 
-		for (const key in objects) {
+		for (const item of arrayIds) {
 
-			let dirSizeTo 	= `./${fileDir}/${objects[key]}`,
+			let dirSizeTo 	= `./${fileDir}/${item.size}`,
 				fileName 	= path.basename(filePath, '.svg'),
-				pngName 	= key === 'icon' ? `./${fileDir}/${objects[key]}/${fileName}.png` : `./${fileDir}/${objects[key]}/${key}.png`,
-				objectId 	= `${key}_${objects[key]}`;
+				pngName 	= item.key === 'icon' ? `./${fileDir}/${item.size}/${fileName}.png` : `./${fileDir}/${item.size}/${item.key}.png`,
+				objectId 	= `${item.key}_${item.size}`;
 
 			// Create directory
 			exec(`mkdir -p ${dirSizeTo}`, (err, stdout, stderr) => {
@@ -82,7 +82,7 @@ function createSizeFolder(objects, filePath, cb) {
 
 		if (err) return cb(err);
 
-		// total of objects
+		// total of arrayIds
 		count--;
 
 		// When it is equal to 0 is because all callbacks have returned
@@ -115,12 +115,11 @@ function getObjInSvg(filePath, cb) {
 		if (stderr) cb(stderr);
 
 		var re = /\n(.{2,})_([0-9]{2,}),/g,
-			matches = {};
-
+			matches = [];
+		
 		stdout.replace(re, (match, $1, $2) => {
-			matches[$1] = $2
+			matches.push({key:$1,size:$2});
 		});
-
 
 		// to create folder sizes
 		createSizeFolder(matches, filePath, function(err) {
@@ -219,18 +218,48 @@ gulp.task('watch', function () {
 
 	return watch('./src/**/*', function (file) {
 
+		// Check if file exist 
+		if(!fs.existsSync(file.path)){
+			console.log('remove ->', file.path)
+			return
+		}
+
 		// Only svg files
 		if (fs.statSync(file.path).isFile() && (path.extname(file.path) == '.svg')) {
 
-
 			// Start process to create icons
 			getObjInSvg(file.path, function(err) {
-				if (err) return callback(err)
-
 				
-			})
+				if (err) console.log(err)
+				
+				// Update icons
+				let lasta = process.argv[process.argv.length - 1];
+				
+				if(lasta == '-P' || lasta == '-D' ){
+					
+					if(lasta == '-P') lasta = 'plane';
+					if(lasta == '-D') lasta = 'plane-dark';
 
-		
+					exec('gsettings set org.gnome.desktop.interface icon-theme "Adwaita"',()=>{
+						
+						setTimeout(()=>{
+							
+							exec(`gsettings set org.gnome.desktop.interface icon-theme "${lasta}"`,()=>{
+								setTimeout(()=>{
+									exec(`gtk-update-icon-cache -f -t /usr/share/icons/${lasta}`,()=>{
+										console.log(`Update ${lasta} icons`)
+									})
+								},2000)
+							})
+							
+						},2000)
+
+					})
+
+				}
+
+	
+			})
 		} 
 
 	});
