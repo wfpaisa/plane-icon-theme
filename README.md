@@ -8,30 +8,40 @@ A simple iconset, preferably used in dark versions of Gnome.  Love/Arch
 - Render icons in = ./plane ./plane-dark
 
 
-## Build
-- Is necesary nodejs 7.0 +
-- `npm install`
-- `npm start`
-- `gulp`
-
-
-
 ## Installation
 
-Downlad the lasted version in
+1. Downlad the lasted version in [releases](https://github.com/wfpaisa/plane-icon-theme/releases)
+2. Unzip
+3. Copy in `/usr/share/icons/plane/` or `/usr/share/icons/plane-dark/`
+4. Change icon set with Gnome Tweak Tool
 
-```
-$ gulp
-$ sudo gulp copy
-```
+
+## Build
+
+- Is necesary nodejs 7.0 +
+- `$ npm install`
+- `$ npm install --global gulp-cli`
+- `$ gulp`
+- `sudo gulp copy`
 
 ## Developer
-``` 
-$ sudo gulp link 
-$ gulp watch #Auto update 
 
-$ gulp watch -P #Auto update with refresh icon cache Light version
-$ gulp watch -D #Auto update with refresh icon cache Dark version
+Allows hot editing, gulp watch auto will generate the icon and if you pass the parameter will update the icon set.
+
+```bash 
+
+# Symbolic link /usr/share/icons/ -> ./plane && ./plane-dark
+$ sudo gulp link
+
+
+# Auto update
+$ gulp watch 
+
+# Or auto update with refresh icon cache Light (plane) version
+$ gulp watch -P 
+
+# Or auto update with refresh icon cache Dark (plane-dark) version
+$ gulp watch -D 
 ```
 
 
