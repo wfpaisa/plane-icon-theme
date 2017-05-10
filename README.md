@@ -48,4 +48,12 @@ $ gulp watch -D
 ![Screen](./screenshot.png)
 
 
+
+## TODO
+- change clean exec to gulp-del
+
+## Recursos
+- (jsdom)[https://www.smashingmagazine.com/2014/05/love-generating-svg-javascript-move-to-server/#jsdom]
+- (svgutils)[https://github.com/Goomeo/svgutils]
+
 License: GPLv3
