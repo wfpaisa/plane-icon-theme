@@ -1,6 +1,6 @@
 # Plane-icon-theme
 
-A simple iconset, preferably used in dark versions of Gnome.  Love/Arch
+A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape/Gnome
 
 
 - Source icons in = ./src/plane ./src/plane-dark
@@ -12,8 +12,11 @@ A simple iconset, preferably used in dark versions of Gnome.  Love/Arch
 
 1. Downlad the lasted version in [releases](https://github.com/wfpaisa/plane-icon-theme/releases)
 2. Unzip
-3. Copy in `/usr/share/icons/plane/` or `/usr/share/icons/plane-dark/`
-4. Change icon set with Gnome Tweak Tool
+3. White
+	- Copy in `./plane` to `/usr/share/icons/plane/`
+4. Dark
+	- Copy in `./plane-dark` to `/usr/share/icons/plane-dark`
+5. Change icon set with Gnome Tweak Tool
 
 
 ## Build
@@ -43,17 +46,14 @@ $ gulp watch -P
 # Or auto update with refresh icon cache Dark (plane-dark) version
 $ gulp watch -D 
 ```
-
+Generate png files `renamegulpfile-to-png.js` to `gulpfile.js`.
 
 ![Screen](./screenshot.png)
 
 
 
 ## TODO
-- change clean exec to gulp-del
 
-## Recursos
-- (jsdom)[https://www.smashingmagazine.com/2014/05/love-generating-svg-javascript-move-to-server/#jsdom]
-- (svgutils)[https://github.com/Goomeo/svgutils]
+
 
 License: GPLv3

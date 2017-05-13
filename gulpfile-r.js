@@ -12,6 +12,8 @@ var fs = require('fs'),
 
 
 
+
+
 /**
  * Scan all groups from svg file and return a array of icons
  *
@@ -20,35 +22,34 @@ var fs = require('fs'),
  */
 function renderIcons(file, cb) {
 
-	try {
+	let xml = file.contents.toString('utf8');
 
-		let xml = file.contents.toString('utf8');
-
-		// Are there icon inside file?
-		var findIcon = false;
+	// Are there icon inside file?
+	var findIcon = false;
 
 
-		xml2js.parseString(xml, (err, xmlObj) => {
+	xml2js.parseString(xml, (err, xmlObj) => {
 
-			if (err) return cb(err);
+		if (err) return cb(err);
 
-			// let layers = result.svg;
+		// let layers = result.svg;
 
-			// Are there layers?
-			if (!xmlObj.svg.g) return cb(null, []);
+		// Are there layers?
+		if (!xmlObj.svg.g) return cb(null, []);
 
-			let allIcons = [];
+		let allIcons = [];
 
-			// Get layers
-			xmlObj.svg.g.forEach(layer => {
+		// Get layers
+		xmlObj.svg.g.forEach(layer => {
 
-				// Are there groups?
-				if (!layer.g) return;
+			// Are there groups?
+			if (!layer.g) return;
 
-				// Check if is visible
-				if (layer.$.style && (layer.$.style === 'display:none')) return;
+			// layer.g
+			layer.g.forEach(group => {
 
 
+				console.log(group)
 				/*==================================================
 				=          1. Separe icon (inmutable)            =
 				==================================================*/
@@ -56,22 +57,24 @@ function renderIcons(file, cb) {
 				let icon = JSON.parse(JSON.stringify(xmlObj)),
 					builder = new xml2js.Builder();
 
-
-				// Replace all groups for current group
-				icon.svg.g = [layer];
+				// Rewrite layers and groups with current layer and group
+				icon.svg.g = [{
+					$: layer.$,
+					g: [group]
+				}];
 
 
 				/*=============================================
 				=         2. Name and Size the icon           =
 				*
-				* Set new size from layer name_size
+				* Set new size from group name_size
+				* if name is diferent to 'icon' change
 				=============================================*/
-				let haveName = false;
-
-				layer.$["inkscape:label"].replace(/(.{2,})_([0-9]{2,})/, (match, $1, $2) => {
+				group.$.id.replace(/(.{2,})_([0-9]{2,})/, (match, $1, $2) => {
 					icon.svg.$.width = $2;
 					icon.svg.$.height = $2;
 					icon.svg.$.viewBox = `0 0 ${$2} ${$2}`;
+
 
 					if ($1 == 'icon') {
 						icon.svg.$['sodipodi:docname'] = path.basename(file.path);
@@ -79,75 +82,106 @@ function renderIcons(file, cb) {
 						icon.svg.$['sodipodi:docname'] = `${$1}.svg`;
 					}
 
-					// Find a name
-					haveName = true;
+					// Find a icon
+					findIcon = true;
 				});
-				if(!haveName) return console.log("\x1b[31m", `Layer(${layer.$['inkscape:label']}) The name must be: "name_size", example: icon_24" or "atom_24".`);
 
 
-				/*===================================================================================
-				=       3. Move the layer to x=0 y=0  and check if have layer with name=frame       =
-				====================================================================================*/
-				let haveFrame = false;
+
+				/*=======================================================
+				=            3. Get x,y from rect.id="iframe"           =
+				*
+				* This rectangle have the absolute position
+				=======================================================*/
 				let rectx = 0;
 				let recty = 0;
+				let frameExist = false;
 
-				// Check if there are a group with label iframe and if this have a rectangle
-				layer.g.forEach(frame => {
-					if ((frame.$['inkscape:label'] === 'frame') && frame.rect) {
+				if (group.rect) {
+					group.rect.forEach((rect) => {
 
-						let gx = -1 * frame.rect[0].$.x;
-						let gy = -1 * frame.rect[0].$.y;
+						if (rect.$['inkscape:label'] == 'frame') {
+							rectx = rect.$.x;
+							recty = rect.$.y;
+							frameExist = true;
+						}
+					})
+				}
 
-						icon.svg.g[0].$.transform = `translate(${gx},${gy})`;						
 
-						haveFrame = true;
+
+				/*====================================================
+				=            4. Translate group x:0 , y:0            =
+				* Real position = (-Rect.x) * (group.zoom-width)
+				* move the matrix or translate transform
+				====================================================*/
+				if (frameExist) {
+
+					// Remove layer transform 
+					if (layer.$.transform) delete icon.svg.g[0].$.transform;
+
+					// Translate group to absolute position
+					if (group.$.transform) {
+
+						if (group.$.transform.match(/translate/)) {
+
+							let gx = -1 * rectx;
+							let gy = -1 * recty;
+							icon.svg.g[0].g[0].$.transform = `translate(${gx},${gy})`;
+
+						} else {
+
+							let reg = /matrix\(([e|\-|0-9|\.]*),([e|\-|0-9|\.]*),([e|\-|0-9|\.]*),([e|\-|0-9|\.]*),([e|\-|0-9|\.]*),([e|\-|0-9|\.]*)\)/;
+							let strG = icon.svg.g[0].g[0].$.transform;
+
+							strG.replace(reg, (match, $1, $2, $3, $4, $5, $6) => {
+								let gx = -($1) * rectx;
+								let gy = -($4) * recty;
+
+								icon.svg.g[0].g[0].$.transform = `matrix(${$1},${$2},${$3},${$4},${gx},${gy})`;
+
+							})
+
+						}
+					} else {
+
+						let gx = -1 * rectx;
+						let gy = -1 * recty;
+						icon.svg.g[0].g[0].$.transform = `translate(${gx},${gy})`;
 
 					}
-				})
-
-				if (!haveFrame) return console.log("\x1b[31m", `Layer(${layer.$['inkscape:label']}) Has to have a layer with the name "frame" and inside this a rectangle with the measures of the icon.`);
+				}
 
 
 
-				/*========================================
-				=         4. JSON -> xml(svg)            =
-				========================================*/
+				// JSON -> xml(svg)
 				let strToXml = builder.buildObject(icon);
 				let fileDir = path.dirname(file.path);
 				// Complete path of icon size/name_id.svg
 				let filePath = `${fileDir}/${icon.svg.$.width}/${icon.svg.$['sodipodi:docname']}`;
 
 
-
-				/*==========================================================
-				=    5. Create stream icon and push icon to gulp stream    =
-				==========================================================*/
+				// Create new file from icon
 				let newIcon = new File({
 					base: file.base,
 					path: filePath,
 					contents: new Buffer(strToXml)
 				});
 
+				// Add icon
 				allIcons.push(newIcon)
 
-
-			});
-
-
-			// Test, no render
-			// return cb(null, [])
-
-			cb(null, allIcons);
+			})
 		})
 
+		// Test, no render
+		//return cb(null, [])
 
-	} catch (err) {
+		// if there is no icon inside the file
+		if (!findIcon) return cb(null, [file])
 
-		console.error("\x1b[31m", 'Error in: ' + file.path);
-		return cb(err, [])
-
-	}
+		cb(null, allIcons);
+	})
 
 }
 
@@ -253,6 +287,7 @@ gulp.task('watch', function(cb) {
 
 	return watch('./src/**/*', function(file) {
 
+		console.log(file.path)
 		var dir = path.dirname(file.path);
 		var dirTo = dir.replace('src/', '');
 
