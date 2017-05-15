@@ -52,7 +52,13 @@ Generate png files `renamegulpfile-to-png.js` to `gulpfile.js`.
 
 
 
-## TODO
+## Thanks to
+
+- (Breeze)[https://github.com/KDE/breeze-icons]
+- (Arc Icon Theme)[https://github.com/fc8855/arc-icons]
+- (Paper Icon Theme)[https://github.com/snwh/paper-icon-theme]
+
+And all those designs that served as inspiration
 
 
 
