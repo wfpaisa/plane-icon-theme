@@ -319,7 +319,7 @@ gulp.task('link', function(cb) {
 
 
 /*====================================
-=            Render icons            =
+=           .Render icons.           =
 ====================================*/
 gulp.task('default', ['clean'], (cb) => {
 	gulp.src('./src/**/*')
