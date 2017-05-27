@@ -810,7 +810,8 @@
        y1="-26.00001"
        x2="-32"
        y2="-36.000011"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.2056961,0,0,1.2056961,6.5822759,6.3765815)" />
   </defs>
   <sodipodi:namedview
      pagecolor="#383c4a"
@@ -826,8 +827,8 @@
      id="namedview20"
      showgrid="true"
      inkscape:zoom="23.10501"
-     inkscape:cx="-26.742221"
-     inkscape:cy="76.835291"
+     inkscape:cx="-33.450723"
+     inkscape:cy="77.094974"
      inkscape:current-layer="layer6"
      inkscape:snap-smooth-nodes="false"
      showguides="true"
@@ -1053,16 +1054,17 @@
     <g
        inkscape:groupmode="layer"
        id="layer6"
-       inkscape:label="icon">
+       inkscape:label="icon"
+       style="display:inline">
       <path
-         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#fafafa;fill-opacity:0.48167539;fill-rule:nonzero;stroke:none;stroke-width:0.15372968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:fill markers stroke;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#12568b;fill-opacity:0.38020834;fill-rule:nonzero;stroke:none;stroke-width:0.15372968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:fill markers stroke;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
          d="m -38,-37 v 12 h 12 v -12.00001 l -4,1e-5 z m 1,1 h 7 l 3,-1e-5 V -35 v 9 h -10 z"
          id="rect7694-2-8-5-4"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccccccccccc" />
       <path
-         style="color:#000000;clip-rule:nonzero;display:block;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:url(#linearGradient8654);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.55293339;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:fill markers stroke;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-         d="m -37,-36.000011 7,10e-7 2.976378,0 0,1 c 0.01662,2.999994 0.02362,5.999973 0.02362,9 h -10 z"
+         style="color:#000000;clip-rule:nonzero;display:block;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:url(#linearGradient8654);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.66666967;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:fill markers stroke;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m -38.02848,-37.028492 8.439873,2e-6 H -26 v 1.205696 c 0.02004,3.617081 0.02848,7.234144 0.02848,10.851265 h -12.056962 z"
          id="rect8645"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccccc" />
