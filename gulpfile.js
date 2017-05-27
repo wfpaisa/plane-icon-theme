@@ -68,10 +68,9 @@ function renderIcons(file, cb) {
 				=============================================*/
 				let haveName = false;
 
-				layer.$["inkscape:label"].replace(/(.{2,})_([0-9]{2,})/, (match, $1, $2) => {
-					icon.svg.$.width = $2;
-					icon.svg.$.height = $2;
-					icon.svg.$.viewBox = `0 0 ${$2} ${$2}`;
+				layer.$["inkscape:label"].replace(/(.{2,})_([0-9]{1,}|scalable)/, (match, $1, $2) => {
+
+					icon.svg.$.folder = $2;
 
 					if ($1 == 'icon') {
 						icon.svg.$['sodipodi:docname'] = path.basename(file.path);
@@ -96,9 +95,15 @@ function renderIcons(file, cb) {
 				layer.g.forEach(frame => {
 					if ((frame.$['inkscape:label'] === 'frame') && frame.rect) {
 
+						// File sizes
+						icon.svg.$.width = frame.rect[0].$.width;
+						icon.svg.$.height = frame.rect[0].$.height;
+						icon.svg.$.viewBox = `0 0 ${frame.rect[0].$.width} ${frame.rect[0].$.height}`;
+
+
+						// Translate this elemento to position 0x 0y
 						let gx = -1 * frame.rect[0].$.x;
 						let gy = -1 * frame.rect[0].$.y;
-
 						icon.svg.g[0].$.transform = `translate(${gx},${gy})`;						
 
 						haveFrame = true;
@@ -116,7 +121,7 @@ function renderIcons(file, cb) {
 				let strToXml = builder.buildObject(icon);
 				let fileDir = path.dirname(file.path);
 				// Complete path of icon size/name_id.svg
-				let filePath = `${fileDir}/${icon.svg.$.width}/${icon.svg.$['sodipodi:docname']}`;
+				let filePath = `${fileDir}/${icon.svg.$.folder}/${icon.svg.$['sodipodi:docname']}`;
 
 
 
@@ -273,21 +278,21 @@ gulp.task('watch', function(cb) {
 					if (lasta == '-P') lasta = 'plane';
 					if (lasta == '-D') lasta = 'plane-dark';
 
-					exec('gsettings set org.gnome.desktop.interface icon-theme "Adwaita"', () => {
+					// exec('gsettings set org.gnome.desktop.interface icon-theme "Adwaita"', () => {
 
-						setTimeout(() => {
+					// 	setTimeout(() => {
 
-							exec(`gsettings set org.gnome.desktop.interface icon-theme "${lasta}"`, () => {
-								setTimeout(() => {
+							// exec(`gsettings set org.gnome.desktop.interface icon-theme "${lasta}"`, () => {
+							// 	setTimeout(() => {
 									exec(`gtk-update-icon-cache -f -t /usr/share/icons/${lasta}`, () => {
 										console.log(`Update ${lasta} icons`)
 									})
-								}, 2000)
-							})
+							// 	}, 2000)
+							// })
 
-						}, 2000)
+						// }, 2000)
 
-					})
+					// })
 
 				}
 			});
