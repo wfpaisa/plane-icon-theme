@@ -1,4 +1,4 @@
-# Plane-icon-theme
+# Plane icon theme
 
 A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape/Gnome
 
@@ -47,6 +47,25 @@ $ gulp watch -P
 $ gulp watch -D 
 ```
 Generate png files `renamegulpfile-to-png.js` to `gulpfile.js`.
+
+
+### Estructure file
+`templates/*` contain it the templates with the structure, all templates should have the this structure:
+
+[tag] => inkscape layer
+```
+folder.svg
+	[icon_16|desktop_scalable] -> Render: 16/folder.svg or scalable/desktop.svg 
+		[icon]
+			"icon content"
+		[frame]"contain only a rectangle with sizes of the icon"
+			[frame_16] "must be Rectangle, Render icon with this sizes"
+```
+
+- *.svg* properties are: units in `px`, the `scale in x="1.000"` `scale in y="1.000"`, `viewbox x:0, y:0`
+- The script get all layers the first level and render them Individually
+
+
 
 ![Screen](./screenshot.png)
 
