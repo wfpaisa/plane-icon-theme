@@ -204,9 +204,9 @@ function svg_icons_export() {
 			next();
 		})
 
-
-
 	});
+
+
 }
 
 
@@ -256,46 +256,72 @@ gulp.task('clean', (cb) => {
 ==========================================*/
 gulp.task('watch', function(cb) {
 
+	// for compare the date of modified of the file
+	var rere = '';	
+
 	return watch('./src/**/*', function(file) {
+		
+		// console.log("\x1b[0m", file.path);
 
 		var dir = path.dirname(file.path);
 		var dirTo = dir.replace('src/', '');
+		
+
+		// Time for write big files
+		// Avoid the error: no writecb in Transform class
+		setTimeout(function(){
+
+			// Modified date
+			var fStatMtime = String(fs.statSync(file.path).mtime) + file.path; 
+			
+			
+			// Sometimes the same file is passed twice, by means of the modification date control that will be rendered only once
+			if(rere !== fStatMtime){
+				rere = fStatMtime;
+				// console.log("\x1b[0m");
 
 
-		gulp.src(file.path)
-			.pipe(svg_icons_export())
-			.pipe(gulp.dest(dirTo))
-			.on('end', (cb) => {
+				gulp.src(file.path)
+					.pipe(svg_icons_export())
+					.pipe(gulp.dest(dirTo))
+					.on('end', (cb) => {
 
 
-				// Update cache icons
-				if (process.argv[process.argv.length - 1]) {
+						// Update cache icons
+						if (process.argv[process.argv.length - 1]) {
 
-					let lasta = process.argv[process.argv.length - 1];
+							let lasta = process.argv[process.argv.length - 1];
 
-					if (lasta != "-P" && lasta != "-D") return;
+							if (lasta != "-P" && lasta != "-D") return;
 
-					if (lasta == '-P') lasta = 'plane';
-					if (lasta == '-D') lasta = 'plane-dark';
+							if (lasta == '-P') lasta = 'plane';
+							if (lasta == '-D') lasta = 'plane-dark';
 
-					// exec('gsettings set org.gnome.desktop.interface icon-theme "Adwaita"', () => {
+							// exec('gsettings set org.gnome.desktop.interface icon-theme "Adwaita"', () => {
 
-					// 	setTimeout(() => {
-
-							// exec(`gsettings set org.gnome.desktop.interface icon-theme "${lasta}"`, () => {
 							// 	setTimeout(() => {
-									exec(`gtk-update-icon-cache -f -t /usr/share/icons/${lasta}`, () => {
-										console.log(`Update ${lasta} icons`)
-									})
-							// 	}, 2000)
+
+							// 		exec(`gsettings set org.gnome.desktop.interface icon-theme "${lasta}"`, () => {
+							// 			setTimeout(() => {
+											exec(`gtk-update-icon-cache -f -t /usr/share/icons/${lasta}`, () => {
+												console.log(`Update ${lasta} icons`)
+												
+
+											})
+									// 	}, 2000)
+									// })
+
+								// }, 2000)
+
 							// })
 
-						// }, 2000)
+						}
+					});
 
-					// })
+			}// if
+		
+		}, 2000)//settimeout
 
-				}
-			});
 
 
 	});
