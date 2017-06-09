@@ -1,3 +1,7 @@
+**Currently in BETA**
+[Do you want the design of an icon ?, Please do this little survey :)](https://docs.google.com/forms/d/e/1FAIpQLSfWt9d_yKD6JG6ckY_S1w5H-nKb_TNqkGzySbLqVtpcmSddVA/viewform?usp=sf_link#responses)
+
+
 # Plane icon theme
 
 A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape/Gnome
@@ -69,6 +73,11 @@ folder.svg
 
 ![Screen](./screenshot.png)
 
+
+### Libreoffice icons
+
+- Light `$ sudo cp ./libreoffice-breeze/images_breeze.zip /usr/lib/libreoffice/share/config/images_breeze.zip` Then open Libreoffice and go to Tools->Options->View and choose Breeze.
+- Dark `$ sudo cp ./libreoffice-breeze/images_breeze_dark.zip /usr/lib/libreoffice/share/config/images_breeze_dark.zip` Then open Libreoffice and go to Tools->Options->View and choose Breeze_dark.
 
 
 ## Thanks to
