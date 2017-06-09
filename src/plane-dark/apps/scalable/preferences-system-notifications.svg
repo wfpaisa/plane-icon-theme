@@ -13,7 +13,7 @@
    width="51.200001"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.1 r"
    sodipodi:docname="preferences-system-notifications.svg">
   <metadata
      id="metadata24">
@@ -920,7 +920,7 @@
      id="namedview20"
      showgrid="false"
      inkscape:zoom="9.3749999"
-     inkscape:cx="24.257847"
+     inkscape:cx="24.524514"
      inkscape:cy="21.46231"
      inkscape:current-layer="layer2"
      inkscape:snap-smooth-nodes="true"
@@ -1083,19 +1083,17 @@
            id="path4342"
            style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3682ca;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.61812234;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.77083333;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
       </g>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.07510376px;line-height:1000%;font-family:'Bitstream Vera Sans';-inkscape-font-specification:'Bitstream Vera Sans';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.93749994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="4.0033598"
-         y="15.298788"
-         id="text4344"
-         sodipodi:linespacing="1000%"
-         transform="scale(1.2096165,0.82670829)"><tspan
-           sodipodi:role="line"
-           id="tspan4346"
-           x="4.0033598"
-           y="15.298788"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif';fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.93749994px">!</tspan></text>
+      <g
+         aria-label="!"
+         transform="scale(1.2096165,0.82670829)"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Bitstream Vera Sans';-inkscape-font-specification:'Bitstream Vera Sans';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.93749994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         id="text4344">
+        <path
+           d="m 5.9208178,14.584037 q 0,-0.384866 0.2611591,-0.652898 0.2611592,-0.268032 0.6528979,-0.268032 0.3779935,0 0.6460253,0.268032 0.2680317,0.268032 0.2680317,0.652898 0,0.377993 -0.2680317,0.646025 -0.2680318,0.268032 -0.6460253,0.268032 -0.3917387,0 -0.6528979,-0.261159 -0.2611591,-0.268032 -0.2611591,-0.652898 z m 0.02749,-9.5460546 H 7.7214414 L 7.254104,10.680395 v 1.731897 H 6.408773 v -1.731897 z"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.07510376px;line-height:10;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif';fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.93749994px"
+           id="path7863"
+           inkscape:connector-curvature="0" />
+      </g>
     </g>
   </g>
   <g
@@ -1172,7 +1170,7 @@
          ry="1.3942394" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:6.20564032px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#727272;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#727272;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="-26.618793"
          y="59.165398"
          id="text4223-6"
@@ -1180,7 +1178,8 @@
            sodipodi:role="line"
            id="tspan4225-2"
            x="-26.618793"
-           y="59.165398">SPACE</tspan></text>
+           y="59.165398"
+           style="font-size:6.20563984px;line-height:0">SPACE</tspan></text>
       <rect
          style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.40000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.8872549;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
          id="rect4269-9"
@@ -1215,7 +1214,7 @@
          inkscape:connector-curvature="0" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.28519201px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#727272;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#727272;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="-39.734371"
          y="31.973642"
          id="text4294-0"
@@ -1223,7 +1222,8 @@
            sodipodi:role="line"
            id="tspan4296-9"
            x="-39.734371"
-           y="31.973642">A</tspan></text>
+           y="31.973642"
+           style="font-size:7.28519201px;line-height:0">A</tspan></text>
       <rect
          ry="1.1107074"
          transform="rotate(-62.579854)"
@@ -1238,12 +1238,13 @@
          id="text4298-6"
          y="31.973642"
          x="-27.096626"
-         style="font-style:normal;font-weight:normal;font-size:7.28519201px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#727272;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#727272;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            y="31.973642"
            x="-27.096626"
            id="tspan4300-0"
-           sodipodi:role="line">B</tspan></text>
+           sodipodi:role="line"
+           style="font-size:7.28519201px;line-height:0">B</tspan></text>
       <rect
          style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.40000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.8872549;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
          id="rect4346-6"
@@ -1255,7 +1256,7 @@
          ry="1.1107074" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.28519201px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#727272;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#727272;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="-14.698995"
          y="31.973642"
          id="text4302-2"
@@ -1263,7 +1264,8 @@
            sodipodi:role="line"
            id="tspan4304-6"
            x="-14.698995"
-           y="31.973642">D</tspan></text>
+           y="31.973642"
+           style="font-size:7.28519201px;line-height:0">D</tspan></text>
       <rect
          ry="1.1107074"
          transform="rotate(-62.579854)"
@@ -1278,12 +1280,13 @@
          id="text4306-8"
          y="41.690735"
          x="-39.576454"
-         style="font-style:normal;font-weight:normal;font-size:7.28519201px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#727272;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#727272;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            y="41.690735"
            x="-39.576454"
            id="tspan4308-7"
-           sodipodi:role="line">E</tspan></text>
+           sodipodi:role="line"
+           style="font-size:7.28519201px;line-height:0">E</tspan></text>
     </g>
   </g>
 </svg>
