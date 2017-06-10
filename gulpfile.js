@@ -263,6 +263,9 @@ gulp.task('watch', function(cb) {
 		
 		// console.log("\x1b[0m", file.path);
 
+		// when delete file
+		if (!fs.existsSync(file.path)) return;
+
 		var dir = path.dirname(file.path);
 		var dirTo = dir.replace('src/', '');
 		
