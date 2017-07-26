@@ -406,16 +406,6 @@
        x2="29.903797"
        y2="14.146588" />
     <linearGradient
-       gradientTransform="translate(-32,-32)"
-       inkscape:collect="always"
-       xlink:href="#linearGradient8430"
-       id="linearGradient8432"
-       x1="-38"
-       y1="-39.000011"
-       x2="-26.239468"
-       y2="-25.00001"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
        id="linearGradient8430">
       <stop
          style="stop-color:#e8b2ff;stop-opacity:1;"
@@ -850,10 +840,10 @@
      inkscape:window-height="480"
      id="namedview20"
      showgrid="true"
-     inkscape:zoom="8.2423078"
-     inkscape:cx="289.16069"
-     inkscape:cy="-193.06014"
-     inkscape:current-layer="layer12"
+     inkscape:zoom="23.10501"
+     inkscape:cx="-48.872845"
+     inkscape:cy="101.36359"
+     inkscape:current-layer="layer6"
      inkscape:snap-smooth-nodes="true"
      showguides="true"
      borderlayer="true"
@@ -1099,8 +1089,8 @@
        inkscape:label="icon"
        style="display:inline">
       <path
-         style="color:#000000;clip-rule:nonzero;display:block;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:url(#linearGradient8432);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.14573804;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:fill markers stroke;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-         d="m -70,-71.00001 v 14 h 12 v -14 z m 0.999952,2 h 1 l 4.8e-5,2 h -1 z m 9.000048,0 h 1 v 2 h -1 z m -7,0 h 6 v 4 h -6 z m -2,3 h 1 v 2 h -1 z m 9,0 h 1 v 2 h -1 z m -9,3 h 1 v 2 h -1 z m 9,0 h 1 v 2 h -1 z m -7,0 h 6 v 4 h -6 z m -2,3 h 1 v 2 h -1 z m 8.99999,0 H -59 v 1.952765 h -1 z"
+         style="color:#000000;clip-rule:nonzero;display:block;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#b29bde;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.14573804;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:fill markers stroke;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m -71,-71.00001 v 14 h 14 v -14 z m 0.999952,2 h 1 l 4.8e-5,2 h -1 z m 11.000048,0 h 1 v 2 h -1 z m -9,0 h 8 v 4 h -8 z m -2,3 h 1 v 2 h -1 z m 11,0 h 1 v 2 h -1 z m -11,3 h 1 v 2 h -1 z m 11,0 h 1 v 2 h -1 z m -9,0 h 8 v 4 h -8 z m -2,3 h 1 v 2 h -1 z m 10.99999,0 H -58 v 1.952765 h -1 z"
          id="rect8399"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
@@ -1144,7 +1134,7 @@
        style="display:inline">
       <path
          style="color:#000000;clip-rule:nonzero;display:block;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:url(#linearGradient8432-3);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.21860705;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:fill markers stroke;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-         d="m -53,-55 v 21 h 18 v -21 z m 1,3 h 1.999928 L -50,-49 h -2 z m 14,0 2,0 v 3 h -2 z m -11,0 h 10 v 7 h -10 z m -3,4 h 2 v 3 h -2 z m 14,0 h 2 v 3 h -2 z m -14,4 h 2 v 3 h -2 z m 14,0 h 2 v 3 h -2 z m -11,1 h 10 v 7 h -10 z m -3,3 h 2 v 3 h -2 z m 14,0 h 2 v 4.000038 L -38,-36 Z"
+         d="m -53,-55 v 21 h 18 v -21 z m 1,3 h 1.999928 L -50,-49 h -2 z m 14,0 h 2 v 3 h -2 z m -11,0 h 10 v 7 h -10 z m -3,4 h 2 v 3 h -2 z m 14,0 h 2 v 3 h -2 z m -14,4 h 2 v 3 h -2 z m 14,0 h 2 v 3 h -2 z m -11,1 h 10 v 7 h -10 z m -3,3 h 2 v 3 h -2 z m 14,0 h 2 v 4.000038 L -38,-36 Z"
          id="rect8399-5"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
