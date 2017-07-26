@@ -51,7 +51,9 @@ $ gulp watch -P
 # Or auto update with refresh icon cache Dark (plane-dark) version
 $ gulp watch -D 
 ```
-Generate png files `renamegulpfile-to-png.js` to `gulpfile.js`.
+
+##### To PNG
+If you want Generate png files rename `gulpfile-to-png.js` to `gulpfile.js`, This is an old feature, it can work in an unexpected way.
 
 
 ### Estructure file
@@ -89,6 +91,10 @@ folder.svg
 
 And all those designs that served as inspiration
 
+
+## Reviews
+- (desdelinux)[https://blog.desdelinux.net/plane-moderno-paquete-iconos-gnome/]
+- (Charlie Henson)[https://www.youtube.com/watch?v=9s5H3sbNgAU&t=27s]
 
 
 License: GPLv3
