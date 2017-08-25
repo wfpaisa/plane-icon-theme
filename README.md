@@ -17,9 +17,9 @@ A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape
 1. Downlad the lasted version in [releases](https://github.com/wfpaisa/plane-icon-theme/releases)
 2. Unzip
 3. White
-	- Copy in `./plane` to `/usr/share/icons/plane/`
+  - Copy in `./plane` to `/usr/share/icons/plane/`
 4. Dark
-	- Copy in `./plane-dark` to `/usr/share/icons/plane-dark`
+  - Copy in `./plane-dark` to `/usr/share/icons/plane-dark`
 5. Change icon set with Gnome Tweak Tool
 
 
@@ -52,7 +52,11 @@ $ gulp watch -P
 $ gulp watch -D 
 ```
 
-##### To PNG
+#### ERRORs
+- "Error: watch /xxx/xxx ENOSPC"  Solution -> `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`  [more info](https://github.com/gulpjs/gulp/issues/217) 
+
+
+#### To PNG
 If you want Generate png files rename `gulpfile-to-png.js` to `gulpfile.js`, This is an old feature, it can work in an unexpected way.
 
 
