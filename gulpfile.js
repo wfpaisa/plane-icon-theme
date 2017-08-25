@@ -125,7 +125,7 @@ function renderIcons(file, cb) {
 						// Translate this elemento to position 0x 0y
 						let gx = -1 * frame.rect[0].$.x;
 						let gy = -1 * frame.rect[0].$.y;
-						icon.svg.g[0].$.transform = `translate(${gx},${gy})`;						
+						icon.svg.g[0].$.transform = `translate(${gx},${gy})`;
 
 						haveFrame = true;
 
@@ -278,10 +278,10 @@ gulp.task('clean', (cb) => {
 gulp.task('watch', function(cb) {
 
 	// for compare the date of modified of the file
-	var rere = '';	
+	var rere = '';
 
 	return watch('./src/**/*', function(file) {
-		
+
 		// console.log("\x1b[0m", file.path);
 
 		// when delete file
@@ -289,16 +289,16 @@ gulp.task('watch', function(cb) {
 
 		var dir = path.dirname(file.path);
 		var dirTo = dir.replace('src/', '');
-		
+
 
 		// Time for write big files
 		// Avoid the error: no writecb in Transform class
 		setTimeout(function(){
 
 			// Modified date
-			var fStatMtime = String(fs.statSync(file.path).mtime) + file.path; 
-			
-			
+			var fStatMtime = String(fs.statSync(file.path).mtime) + file.path;
+
+
 			// Sometimes the same file is passed twice, by means of the modification date control that will be rendered only once
 			if(rere !== fStatMtime){
 				rere = fStatMtime;
@@ -329,7 +329,7 @@ gulp.task('watch', function(cb) {
 							// 			setTimeout(() => {
 											exec(`gtk-update-icon-cache -f -t /usr/share/icons/${lasta}`, () => {
 												console.log(`Update ${lasta} icons`)
-												
+
 
 											})
 									// 	}, 2000)
@@ -343,7 +343,7 @@ gulp.task('watch', function(cb) {
 					});
 
 			}// if
-		
+
 		}, 2000)//settimeout
 
 
