@@ -1,5 +1,5 @@
 <p align="center">
-![Logo](./assets/logo.svg)
+<img src="./assets/logo.svg" />
 </p>
 
 
