@@ -1,4 +1,6 @@
+<p align="center">
 ![Logo](assets/logo.svg)
+</p>
 
 
 
@@ -92,7 +94,7 @@ folder.svg
 
 ![Screen](./assets/screenshots/screenshot.png)
 
-(see more screenshots) [./screenshots.md]
+[see more screenshots](./screenshots.md)
 
 ## Thanks to
 
