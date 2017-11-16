@@ -1,5 +1,13 @@
+![Logo](assets/logo.svg)
+
+
+
+
+
+
+
 **Currently in BETA**
-[Do you want the design of an icon ?, Please do this little survey :)](https://docs.google.com/forms/d/e/1FAIpQLSfWt9d_yKD6JG6ckY_S1w5H-nKb_TNqkGzySbLqVtpcmSddVA/viewform?usp=sf_link#responses)
+
 
 
 # Plane icon theme
@@ -77,15 +85,14 @@ folder.svg
 - The script get all layers the first level and render them Individually
 
 
-
-![Screen](./screenshot.png)
-
-
 ### Libreoffice icons
 
 - Light `$ sudo cp ./libreoffice-breeze/images_breeze.zip /usr/lib/libreoffice/share/config/images_breeze.zip` Then open Libreoffice and go to Tools->Options->View and choose Breeze.
 - Dark `$ sudo cp ./libreoffice-breeze/images_breeze_dark.zip /usr/lib/libreoffice/share/config/images_breeze_dark.zip` Then open Libreoffice and go to Tools->Options->View and choose Breeze_dark.
 
+![Screen](./assets/screenshots/screenshot.png)
+
+(see more screenshots) [./screenshots.md]
 
 ## Thanks to
 
