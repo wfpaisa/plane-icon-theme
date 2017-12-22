@@ -26,10 +26,8 @@ A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape
 
 1. Downlad the lasted version in [releases](https://github.com/wfpaisa/plane-icon-theme/releases)
 2. Unzip
-3. White
-  - Copy in `./plane` to `/usr/share/icons/plane/`
-4. Dark
-  - Copy in `./plane-dark` to `/usr/share/icons/plane-dark`
+3. Light: Copy in `./plane` to `/usr/share/icons/plane/`
+4. Dark: Copy in `./plane-dark` to `/usr/share/icons/plane-dark`
 5. Change icon set with Gnome Tweak Tool
 
 
