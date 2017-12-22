@@ -17,9 +17,9 @@
 A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape/Gnome
 
 
-- Source icons in = ./src/plane ./src/plane-dark
+- Source icons in = `./src/plane`  and `./src/plane-dark`
 
-- Render icons in = ./plane ./plane-dark
+- Render icons in = `./plane` and `./plane-dark`
 
 
 ## Installation
