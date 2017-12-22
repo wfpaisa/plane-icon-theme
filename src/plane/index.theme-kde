@@ -1,9 +1,10 @@
 [Icon Theme]
 Name=plane
-Inherits=Adwaita,gnome,hicolor
+Inherits=breeze,hicolor
 Comment=Plane Icon theme
 Example=folder
 
+#Inherits=Adwaita,gnome,hicolor
 
 DesktopDefault=48
 DesktopSizes=16,24,32,48,64,96,128
