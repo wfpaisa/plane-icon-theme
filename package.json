@@ -24,7 +24,7 @@
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-svgo": "^1.0.3",
+    "gulp-svgmin": "^1.2.4",
     "gulp-watch": "^4.3.11",
     "map-stream": "0.0.7",
     "through2": "^2.0.3",

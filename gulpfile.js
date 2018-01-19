@@ -27,7 +27,7 @@ var fs = require('fs'),
 	File = require('vinyl'),
 	del = require('del'),
 	xml2js = require('xml2js'),
-	svgo = require('gulp-svgo'),
+	svgmin = require('gulp-svgmin'),
 	exec = require('child_process').exec,
 	watch = require('gulp-watch');
 
@@ -239,7 +239,7 @@ gulp.task('copy-plane', (cb) => {
 		force: true
 	}).then(paths => {
 		gulp.src(['./plane/**/*'])
-			.pipe(svgo())
+			.pipe(svgmin())
 			.pipe(gulp.dest('/usr/share/icons/plane/'))
 			.on('end', cb)
 	});
@@ -251,7 +251,7 @@ gulp.task('copy-plane-dark', (cb) => {
 		force: true
 	}).then(paths => {
 		gulp.src(['./plane-dark/**/*'])
-			.pipe(svgo())
+			.pipe(svgmin())
 			.pipe(gulp.dest('/usr/share/icons/plane-dark/'))
 			.on('end', cb)
 	});
@@ -307,6 +307,11 @@ gulp.task('watch', function(cb) {
 
 				gulp.src(file.path)
 					.pipe(svg_icons_export())
+					.pipe(svgmin({
+					    js2svg: {
+					        pretty: true
+					    }
+					}))
 					.pipe(gulp.dest(dirTo))
 					.on('end', (cb) => {
 
@@ -379,6 +384,17 @@ gulp.task('link', function(cb) {
 gulp.task('default', ['clean'], (cb) => {
 	gulp.src('./src/**/*')
 		.pipe(svg_icons_export())
+		.pipe(svgmin())
 		.pipe(gulp.dest(__dirname))
 		.on('end', cb);
 });
+
+
+/**
+
+	TODO:
+	- Minify and clear files too with https://github.com/scour-project/scour
+	- Multiple folder colors
+	- Compress each set-icons
+
+ */
