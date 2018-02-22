@@ -239,7 +239,7 @@ gulp.task('copy-plane', (cb) => {
 		force: true
 	}).then(paths => {
 		gulp.src(['./plane/**/*'])
-			.pipe(svgmin())
+			// .pipe(svgmin())
 			.pipe(gulp.dest('/usr/share/icons/plane/'))
 			.on('end', cb)
 	});
@@ -251,7 +251,7 @@ gulp.task('copy-plane-dark', (cb) => {
 		force: true
 	}).then(paths => {
 		gulp.src(['./plane-dark/**/*'])
-			.pipe(svgmin())
+			// .pipe(svgmin())
 			.pipe(gulp.dest('/usr/share/icons/plane-dark/'))
 			.on('end', cb)
 	});
@@ -307,11 +307,11 @@ gulp.task('watch', function(cb) {
 
 				gulp.src(file.path)
 					.pipe(svg_icons_export())
-					.pipe(svgmin({
-					    js2svg: {
-					        pretty: true
-					    }
-					}))
+					// .pipe(svgmin({
+					//     js2svg: {
+					//         pretty: true
+					//     }
+					// }))
 					.pipe(gulp.dest(dirTo))
 					.on('end', (cb) => {
 
@@ -384,7 +384,7 @@ gulp.task('link', function(cb) {
 gulp.task('default', ['clean'], (cb) => {
 	gulp.src('./src/**/*')
 		.pipe(svg_icons_export())
-		.pipe(svgmin())
+		// .pipe(svgmin())
 		.pipe(gulp.dest(__dirname))
 		.on('end', cb);
 });
