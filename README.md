@@ -50,6 +50,7 @@ $ gulp -debug
 
 # Auto update
 # Change [-PlaneGnome] for the icon set you want reload from `./build/variants`
+$ ln -s [FOLDER_PATH]/build/variants/PlaneGnome ~/.local/share/icons/PlaneGnome
 $ gulp watch -PlaneGnome
 
 ```
