@@ -25,7 +25,7 @@ A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape
 ## Installation
 
 1. Downlad the lasted version in `./build/zip-variants/`
-2. Unzip in `USER_FOLDER/.local/share/icons`
+2. Unzip in `[USER_FOLDER]/.local/share/icons`
 3. Change icon set with Gnome Tweak Tool
 
 
@@ -36,7 +36,7 @@ Here [videos](https://goo.gl/VG1t8R)
 - `$ npm install`
 - `$ npm install --global gulp-cli`
 - `$ gulp`
-- `sudo gulp`
+
 
 ## Developer
 
