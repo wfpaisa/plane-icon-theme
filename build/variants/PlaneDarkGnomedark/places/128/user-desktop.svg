@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="128" viewBox="0 0 128 128" width="128">
+    <title>
+        Template icons dark
+    </title>
+    <defs>
+        <linearGradient id="a">
+            <stop offset="0" stop-color="#9081c4"/>
+            <stop offset="1" stop-color="#8baddf"/>
+        </linearGradient>
+        <linearGradient id="b">
+            <stop offset="0" stop-color="#9751de"/>
+            <stop offset="1" stop-color="#3c87f8"/>
+        </linearGradient>
+        <linearGradient id="c">
+            <stop offset="0" stop-color="#eaf03f" stop-opacity=".422"/>
+            <stop offset="1" stop-color="#4e79e6" stop-opacity=".416"/>
+        </linearGradient>
+        <linearGradient xlink:href="#b" id="d" x1="212.945" y1="123.216" x2="298.799" y2="196.784" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.33016 0 0 1.28605 -68.521 66.297)"/>
+        <linearGradient xlink:href="#c" id="e" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.33016 0 0 1.28605 -68.521 66.297)" x1="295.139" y1="128.574" x2="216.105" y2="194.162"/>
+    </defs>
+    <g transform="translate(-208 -208)">
+        <rect style="isolation:auto;mix-blend-mode:normal;marker:none" width="120" height="100" x="212" y="222" ry="0" color="#000" display="block" overflow="visible" fill-opacity=".078" paint-order="fill markers stroke"/>
+        <rect ry="0" y="223" x="213" height="98" width="118" style="isolation:auto;mix-blend-mode:normal;marker:none" color="#000" display="block" overflow="visible" fill-opacity=".078" paint-order="fill markers stroke"/>
+        <path style="isolation:auto;mix-blend-mode:normal;marker:none" color="#000" display="block" overflow="visible" fill="url(#d)" paint-order="fill markers stroke" d="M214 224h116v96H214z"/>
+        <path style="isolation:auto;mix-blend-mode:normal;marker:none" color="#000" display="block" overflow="visible" fill="url(#e)" paint-order="fill markers stroke" d="M214 224h116v96H214z"/>
+        <path style="isolation:auto;mix-blend-mode:normal;marker:none" color="#000" display="block" overflow="visible" fill-opacity=".359" paint-order="fill markers stroke" d="M214 224h116v6H214z"/>
+        <text style="line-height:1000%" x="260.245" y="226.756" transform="scale(.99578 1.00423)" font-size="2.137" font-family="sans-serif" letter-spacing="0" word-spacing="0" fill="#eaf0f9" stroke-width=".134">
+            <tspan x="260.245" y="226.756">sáb, 20 de may, 18:04</tspan>
+        </text>
+        <text y="226.597" x="218.553" style="line-height:1000%" transform="scale(.99578 1.00423)" font-size="2.125" font-family="sans-serif" letter-spacing="0" word-spacing="0" fill="#eaf0f9" stroke-width=".133">
+            <tspan y="226.597" x="218.553">Apps</tspan>
+        </text>
+        <ellipse style="isolation:auto;mix-blend-mode:normal;marker:none" cx="327.008" cy="227" rx=".992" ry="1" color="#000" display="block" overflow="visible" fill="#fff" fill-opacity=".76" paint-order="fill markers stroke"/>
+        <ellipse ry="1" rx=".992" cy="227" cx="323" style="isolation:auto;mix-blend-mode:normal;marker:none" color="#000" display="block" overflow="visible" fill="#fff" fill-opacity=".76" paint-order="fill markers stroke"/>
+        <ellipse style="isolation:auto;mix-blend-mode:normal;marker:none" cx="319" cy="227" rx=".992" ry="1" color="#000" display="block" overflow="visible" fill="#fff" fill-opacity=".76" paint-order="fill markers stroke"/>
+    </g>
+</svg>

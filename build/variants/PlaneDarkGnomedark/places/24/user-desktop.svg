@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+    <title>
+        Template icons dark
+    </title>
+    <defs>
+        <linearGradient id="a">
+            <stop offset="0" stop-color="#9081c4"/>
+            <stop offset="1" stop-color="#8baddf"/>
+        </linearGradient>
+        <linearGradient id="b">
+            <stop offset="0" stop-color="#9751de"/>
+            <stop offset="1" stop-color="#3c87f8"/>
+        </linearGradient>
+        <linearGradient id="c">
+            <stop offset="0" stop-color="#eaf03f" stop-opacity=".422"/>
+            <stop offset="1" stop-color="#4e79e6" stop-opacity=".416"/>
+        </linearGradient>
+    </defs>
+    <g color="#000" transform="translate(56 56)">
+        <path style="isolation:auto;mix-blend-mode:normal;marker:none" d="M-34-53l-20 .04V-35h20zm-19 1h18v4h-18zm0 5h18v11h-18z" display="block" overflow="visible" fill="#fff" fill-opacity=".549" paint-order="fill markers stroke"/>
+        <rect style="isolation:auto;mix-blend-mode:normal;marker:none" width="16" height="9" x="-52" y="-46" ry="0" display="block" overflow="visible" opacity=".2" fill="#e1d3fd" fill-opacity=".799" paint-order="fill markers stroke"/>
+        <rect style="isolation:auto;mix-blend-mode:normal;marker:none" width="2" height="2" x="-38" y="-51" ry="0" display="block" overflow="visible" fill="#fdfdff" fill-opacity=".627" paint-order="fill markers stroke"/>
+        <rect ry="0" y="-51" x="-41" height="2" width="2" style="isolation:auto;mix-blend-mode:normal;marker:none" display="block" overflow="visible" fill="#fdfdff" fill-opacity=".627" paint-order="fill markers stroke"/>
+        <rect style="isolation:auto;mix-blend-mode:normal;marker:none" width="6" height="2" x="-52" y="-51" ry="0" overflow="visible" fill="#fdfdff" fill-opacity=".627" paint-order="fill markers stroke"/>
+    </g>
+</svg>
