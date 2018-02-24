@@ -17,18 +17,16 @@
 A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape/Gnome
 
 
-- Source icons in = `./src/plane`  and `./src/plane-dark`
+- Source icons in = `./src/variants/plane`  and `./src/variants/*` are all posible variants
 
-- Render icons in = `./plane` and `./plane-dark`
+- Render icons in = `./build/variants/*` and zip in `./build/zip-variants/*`
 
 
 ## Installation
 
-1. Downlad the lasted version in [releases](https://github.com/wfpaisa/plane-icon-theme/releases)
-2. Unzip
-3. Light: Copy in `./plane` to `/usr/share/icons/plane/`
-4. Dark: Copy in `./plane-dark` to `/usr/share/icons/plane-dark`
-5. Change icon set with Gnome Tweak Tool
+1. Downlad the lasted version in `./build/zip-variants/`
+2. Unzip in `USER_FOLDER/.local/share/icons`
+3. Change icon set with Gnome Tweak Tool
 
 
 ## Build
@@ -38,38 +36,30 @@ Here [videos](https://goo.gl/VG1t8R)
 - `$ npm install`
 - `$ npm install --global gulp-cli`
 - `$ gulp`
-- `sudo gulp copy`
+- `sudo gulp`
 
 ## Developer
+
+The folder `./src/variants/*` contains all possible icon variants and the var `variants` in the `gulpfile.js` have an array with all posible icon set variants.
 
 Allows hot editing, gulp watch auto will generate the icon and if you pass the parameter will update the icon set.
 
 ```bash 
-
-# Symbolic link /usr/share/icons/ -> ./plane && ./plane-dark
-$ sudo gulp link
-
+# Build with debug
+$ gulp -debug
 
 # Auto update
-$ gulp watch 
+# Change [-PlaneGnome] for the icon set you want reload from `./build/variants`
+$ gulp watch -PlaneGnome
 
-# Or auto update with refresh icon cache Light (plane) version
-$ gulp watch -P 
-
-# Or auto update with refresh icon cache Dark (plane-dark) version
-$ gulp watch -D 
 ```
 
 #### ERRORs
 - "Error: watch /xxx/xxx ENOSPC"  Solution -> `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`  [more info](https://github.com/gulpjs/gulp/issues/217) 
 
 
-#### To PNG
-If you want Generate png files rename `gulpfile-to-png.js` to `gulpfile.js`, This is an old feature, it can work in an unexpected way.
-
-
 ### Estructure file
-`templates/*` contain it the templates with the structure, all templates should have the this structure:
+`./assets/templates/*` contain it the templates with the structure, all templates should have the this structure:
 
 [tag] => inkscape layer
 ```
@@ -87,8 +77,8 @@ folder.svg
 
 ### Libreoffice icons
 
-- Light `$ sudo cp ./libreoffice-breeze/images_breeze.zip /usr/lib/libreoffice/share/config/images_breeze.zip` Then open Libreoffice and go to Tools->Options->View and choose Breeze.
-- Dark `$ sudo cp ./libreoffice-breeze/images_breeze_dark.zip /usr/lib/libreoffice/share/config/images_breeze_dark.zip` Then open Libreoffice and go to Tools->Options->View and choose Breeze_dark.
+- Light `$ sudo cp ./build/libreoffice-breeze/images_breeze.zip /usr/lib/libreoffice/share/config/images_breeze.zip` Then open Libreoffice and go to Tools->Options->View and choose Breeze.
+- Dark `$ sudo cp ./build/libreoffice-breeze/images_breeze_dark.zip /usr/lib/libreoffice/share/config/images_breeze_dark.zip` Then open Libreoffice and go to Tools->Options->View and choose Breeze_dark.
 
 ![Screen](./assets/screenshots/screenshot.png)
 
