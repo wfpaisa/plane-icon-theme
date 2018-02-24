@@ -20,6 +20,16 @@
  */
 
 "use strict";
+
+const version = '0.981';
+const variants = [
+	['Plane','Gnome'],
+	['Plane','Gnome', 'Green'],
+	['Plane','Dark','Gnomedark'],
+	['Plane','Kde'],
+	['Plane','Dark','Kdedark']
+];
+
 var fs = require('fs'),
 	path = require('path'),
 	gulp = require('gulp'),
@@ -29,8 +39,9 @@ var fs = require('fs'),
 	xml2js = require('xml2js'),
 	svgmin = require('gulp-svgmin'),
 	exec = require('child_process').exec,
-	watch = require('gulp-watch');
-
+	watch = require('gulp-watch'),
+	foreach = require("gulp-foreach"),
+	zip = require("gulp-zip");
 
 
 /**
@@ -198,8 +209,9 @@ function svg_icons_export() {
 		// Only svg files
 		if (path.extname(file.path) != '.svg') return next(null, file);
 
-
-		console.log("\x1b[32m", `├─${file.path}`)
+		if(process.argv[process.argv.length - 1] == '-debug'){
+			console.log("\x1b[32m", `├─${file.path}`)
+		}
 
 		// If icon is in size-folder or scalable folder return
 		if (file.path.match('\/scalable\/.*\.svg|\/[0-9]{2,}\/.*\.svg')) return next(null, file)
@@ -216,11 +228,16 @@ function svg_icons_export() {
 			// through2.this.push new icon
 			icons.forEach(icon => {
 
+				if(process.argv[process.argv.length - 1] == '-debug'){
+					console.log("\x1b[32m", `│ ├─>${icon.path}`)
+				}
 
-				console.log("\x1b[32m", `│ ├─>${icon.path}`)
 				this.push(icon);
 			})
-			console.log(' │')
+ 
+			if(process.argv[process.argv.length - 1] == '-debug'){
+				console.log(' │')
+			}
 
 			next();
 		})
@@ -231,46 +248,6 @@ function svg_icons_export() {
 }
 
 
-/*==========================================
-=            Copy directories            =
-==========================================*/
-gulp.task('copy-plane', (cb) => {
-	del(['/usr/share/icons/plane/'], {
-		force: true
-	}).then(paths => {
-		gulp.src(['./plane/**/*'])
-			// .pipe(svgmin())
-			.pipe(gulp.dest('/usr/share/icons/plane/'))
-			.on('end', cb)
-	});
-})
-
-
-gulp.task('copy-plane-dark', (cb) => {
-	del(['/usr/share/icons/plane-dark/'], {
-		force: true
-	}).then(paths => {
-		gulp.src(['./plane-dark/**/*'])
-			// .pipe(svgmin())
-			.pipe(gulp.dest('/usr/share/icons/plane-dark/'))
-			.on('end', cb)
-	});
-})
-
-gulp.task('copy', ['copy-plane', 'copy-plane-dark'], (cb) => {
-	cb();
-})
-
-
-/*==========================================
-=            Clean directories            =
-==========================================*/
-gulp.task('clean', (cb) => {
-	del(['./plane/**/*', './plane-dark/**/*']).then(paths => {
-		// console.log('Deleted files and folders:\n', paths.join('\n'));
-		cb()
-	});
-})
 
 /*==========================================
 =            Watch files            =
@@ -280,16 +257,22 @@ gulp.task('watch', function(cb) {
 	// for compare the date of modified of the file
 	var rere = '';
 
-	return watch('./src/**/*', function(file) {
+	return watch('./src/variants/**/*', function(file) {
+
 
 		// console.log("\x1b[0m", file.path);
 
 		// when delete file
 		if (!fs.existsSync(file.path)) return;
 
-		var dir = path.dirname(file.path);
-		var dirTo = dir.replace('src/', '');
+		let iconSet = 'PlaneGnome';
 
+		if(process.argv[process.argv.length - 1]){
+			iconSet = process.argv[process.argv.length - 1].replace('-', '');
+		}
+
+		var dir = path.dirname(file.path);
+		var dirTo = dir.replace(/src\/variants\/.*\//, `build/variants/${iconSet}/`);
 
 		// Time for write big files
 		// Avoid the error: no writecb in Transform class
@@ -304,47 +287,20 @@ gulp.task('watch', function(cb) {
 				rere = fStatMtime;
 				// console.log("\x1b[0m");
 
-
 				gulp.src(file.path)
 					.pipe(svg_icons_export())
-					// .pipe(svgmin({
-					//     js2svg: {
-					//         pretty: true
-					//     }
-					// }))
+					.pipe(svgmin({
+						js2svg: {
+							pretty: true
+						}
+					}))
 					.pipe(gulp.dest(dirTo))
 					.on('end', (cb) => {
 
+						exec(`gtk-update-icon-cache -f -t ~/.local/share/icons/${iconSet}`, () => {
+							console.log("\x1b[32m", `✔ Update ${iconSet} set icon`);
+						})
 
-						// Update cache icons
-						if (process.argv[process.argv.length - 1]) {
-
-							let lasta = process.argv[process.argv.length - 1];
-
-							if (lasta != "-P" && lasta != "-D") return;
-
-							if (lasta == '-P') lasta = 'plane';
-							if (lasta == '-D') lasta = 'plane-dark';
-
-							// exec('gsettings set org.gnome.desktop.interface icon-theme "Adwaita"', () => {
-
-							// 	setTimeout(() => {
-
-							// 		exec(`gsettings set org.gnome.desktop.interface icon-theme "${lasta}"`, () => {
-							// 			setTimeout(() => {
-											exec(`gtk-update-icon-cache -f -t /usr/share/icons/${lasta}`, () => {
-												console.log(`Update ${lasta} icons`)
-
-
-											})
-									// 	}, 2000)
-									// })
-
-								// }, 2000)
-
-							// })
-
-						}
 					});
 
 			}// if
@@ -352,49 +308,176 @@ gulp.task('watch', function(cb) {
 		}, 2000)//settimeout
 
 
-
 	});
 });
 
-/*==========================================
-=            Link directories            =
-==========================================*/
-gulp.task('link', function(cb) {
-	// Clean directories
-	del(['/usr/share/icons/plane', '/usr/share/icons/plane-dark'], {
-		force: true
-	}).then(paths => {
 
-		exec(`ln -s ${__dirname}/plane /usr/share/icons/plane && ln -s ${__dirname}/plane-dark /usr/share/icons/plane-dark`, (err, stdout, stderr) => {
 
-			if (err) return cb(err);
-			if (stderr) return cb(stderr);
+/*==============================
+=            Render            =
+==============================*/
 
-			cb();
+gulp.task('default', (cb)=>{
+	
+	// Clean folders
+	new Promise( (resolve, reject) =>{
+		del(['./.tmp', './build']).then(paths => {
+
+			console.log("\x1b[32m", "✔ Clean");
+			resolve()
 		});
+	})
 
+	// Prepare temp files
+	.then( (ret) => {
+		return new Promise( (resolve, reject) => {
+			gulp.src([
+				'./src/**/*.*',
+				'!./src/variants/**/*.svg'
+				])
+				.pipe(gulp.dest(__dirname + '/.tmp'))
+				.on('end', (cb) => {
+					
+					console.log("\x1b[32m", "✔ Prepare temp files");
+					resolve()
+				})
+		});
+	})
+
+	// Render icons
+	.then( (ret) => {
+
+		console.log("\x1b[33m", "» Render icons (This may take some time)");
+
+		return new Promise( (resolve, reject) => {
+			gulp.src('./src/variants/**/*.svg')
+				.pipe(svg_icons_export())
+				// Opcional, minimize
+				// .pipe(svgmin())
+				.pipe(gulp.dest(__dirname + '/.tmp/variants/'))
+				.on('end', (cb) =>{
+
+					console.log("\x1b[32m", "✔ Render icons");
+					resolve();
+				});
+		});
+		
+	})
+
+	// Make set icons
+	.then( (ret) => {
+		return new Promise( (resolve, reject) => {
+
+			// 3 Synchronous, copy every folder in each array of variants
+			function copyFolder(folderFrom, folderTo){
+				return new Promise( (resolve) => {
+					gulp.src(`./.tmp/variants/${folderFrom}/**/*`)
+						.pipe(gulp.dest(__dirname + '/build/variants/' + folderTo))
+						.on('end', (cb) =>{
+							resolve();
+						});
+				});
+			}
+
+			// 2 Make a mix of foldes from each item of variants
+			async function mixFolder(folderArray){
+
+				var folderTo = '';
+				folderArray.map( (f) => { folderTo += f })
+
+				for (const folderFrom of folderArray){
+					await copyFolder(folderFrom, folderTo)
+				}
+				console.log("\x1b[32m", `✔ Build ${folderTo} icon set`);
+			}
+
+			// 1 Go through each variants
+			async function arrayVariants(variants){
+
+				for(const  arrayFolder of variants){
+					await mixFolder(arrayFolder);
+				}
+
+				resolve();
+			}
+
+			arrayVariants(variants)
+			
+		});
+		
+	})
+
+	// Copy others files
+	.then( (ret) => {
+		return new Promise( (resolve, reject) => {
+			gulp.src([
+				'./.tmp/**/*',
+				'!./.tmp/variants/',
+				'!./.tmp/variants/**/*',
+				])
+				.pipe(gulp.dest(__dirname + '/build/'))
+				.on('end', (cb) =>{
+
+					console.log("\x1b[32m", "✔ Copy others files");
+					resolve();
+				});
+		});
+	})
+
+	// Zip files
+	.then( (ret) => {
+
+		return new Promise( (resolve, reject) => {
+			
+
+			gulp.src("./build/variants/*")
+				.pipe( foreach( function(stream, file){
+					
+					var fileName = file.path.substr(file.path.lastIndexOf("/")+1);
+					// console.log(` - ${fileName}`);
+
+					return gulp.src(`./build/variants/${fileName}/**/*`)
+						.pipe(zip(`${fileName}-${version}.zip`))
+				}))
+				.pipe(gulp.dest('./build/zip-variants'))
+				.on('end', (cb)=>{
+					console.log("\x1b[32m", "✔ Zip icon set");
+					resolve();
+				})
+				
+		})
+
+	})
+
+	// fin
+	.then( (msgEnd) => {
+		console.log("\x1b[32m", `✔ Ready`);
+		cb()
+	}).
+
+	// Erros
+	catch( (err) =>{
+		if(err) return console.log('Error: ' + err);
 	});
 
-})
 
-
-/*====================================
-=           .Render icons.           =
-====================================*/
-gulp.task('default', ['clean'], (cb) => {
-	gulp.src('./src/**/*')
-		.pipe(svg_icons_export())
-		// .pipe(svgmin())
-		.pipe(gulp.dest(__dirname))
-		.on('end', cb);
 });
 
 
 /**
 
 	TODO:
+	Temporales:
+
+	Build
+	1. pasar a build todo 
+	1. Copiar todos los archivos que no esten en Variantes
+	2. Combinar todas las variantes segun el array
+
+
 	- Minify and clear files too with https://github.com/scour-project/scour
 	- Multiple folder colors
 	- Compress each set-icons
+
 
  */
