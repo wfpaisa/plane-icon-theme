@@ -228,8 +228,12 @@ function svg_icons_export() {
 			// through2.this.push new icon
 			icons.forEach(icon => {
 
+				
+
 				if(process.argv[process.argv.length - 1] == '-debug'){
 					console.log("\x1b[32m", `│ ├─>${icon.path}`)
+				}else{
+					process.stdout.write(".");
 				}
 
 				this.push(icon);
@@ -353,7 +357,7 @@ gulp.task('default', (cb)=>{
 			gulp.src('./src/variants/**/*.svg')
 				.pipe(svg_icons_export())
 				// Opcional, minimize
-				// .pipe(svgmin())
+				.pipe(svgmin())
 				.pipe(gulp.dest(__dirname + '/.tmp/variants/'))
 				.on('end', (cb) =>{
 
