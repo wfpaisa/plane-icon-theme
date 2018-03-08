@@ -293,11 +293,11 @@ gulp.task('watch', function(cb) {
 
 				gulp.src(file.path)
 					.pipe(svg_icons_export())
-					.pipe(svgmin({
-						js2svg: {
-							pretty: true
-						}
-					}))
+					// .pipe(svgmin({
+					// 	js2svg: {
+					// 		pretty: true
+					// 	}
+					// }))
 					.pipe(gulp.dest(dirTo))
 					.on('end', (cb) => {
 
