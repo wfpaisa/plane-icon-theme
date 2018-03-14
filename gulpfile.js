@@ -21,13 +21,25 @@
 
 "use strict";
 
-const version = '0.981';
+const version = '0.982';
 const variants = [
 	['Plane','Gnome'],
-	['Plane','Gnome', 'Green'],
 	['Plane','Dark','Gnomedark'],
-	['Plane','Kde'],
-	['Plane','Dark','Kdedark']
+
+	['Plane','Gnome', 'Arch'],
+	['Plane','Dark','Gnomedark', 'Archdark'],
+
+	['Plane','Gnome', 'Magenta'],
+	['Plane','Dark','Gnomedark', 'Magentadark'],
+
+	['Plane','Gnome', 'Manjaro'],
+	['Plane','Dark','Gnomedark', 'Manjarodark'],
+
+	['Plane','Gnome', 'Ubuntu'],
+	['Plane','Dark','Gnomedark', 'Ubuntudark'],
+
+	// ['Plane','Kde'],
+	// ['Plane','Dark','Kdedark']
 ];
 
 var fs = require('fs'),
