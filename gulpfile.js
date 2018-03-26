@@ -225,8 +225,6 @@ function svg_icons_export() {
 			console.log("\x1b[32m", `├─${file.path}`)
 		}
 
-
-		console.log('file path: ' + file.path)
 		// If icon is in size-folder or scalable folder return
 		if (file.path.match('\/scalable\/.*\.svg|\/[0-9]{2,}\/.*\.svg')) return next(null, file)
 		// Render Icons
@@ -297,13 +295,6 @@ gulp.task('watch', function(cb) {
 			// Modified date
 			var fStatMtime = String(fs.statSync(file.path).mtime) + file.path;
 
-// /home/projects/plane-icon-theme/src/variants/Plane/apps/scalable/eog.svg
-// /home/projects/plane-icon-theme/src/variants/Plane/apps/scalable
-// /home/projects/plane-icon-theme/build/variants/PlaneDarkGnomedark/scalable
-
-			console.log('file.path: ' + file.path)
-			console.log('dir: ' + dir)
-			console.log('dirTo: ' + dirTo)
 			// Sometimes the same file is passed twice, by means of the modification date control that will be rendered only once
 			if(rere !== fStatMtime){
 				rere = fStatMtime;
