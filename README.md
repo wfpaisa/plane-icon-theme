@@ -98,5 +98,7 @@ And all those designs that served as inspiration
 - (desdelinux)[https://blog.desdelinux.net/plane-moderno-paquete-iconos-gnome/]
 - (Charlie Henson)[https://www.youtube.com/watch?v=9s5H3sbNgAU&t=27s]
 
+## Todo
+- https://trello.com/b/m7BIbGZb/plane-icons
 
 License: GPLv3
