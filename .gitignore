@@ -119,3 +119,9 @@ nbproject
 .node_history
 next
 .directory
+
+# Sublime workspace
+*.sublime-project
+*.sublime-workspace
+
+TODO.md
