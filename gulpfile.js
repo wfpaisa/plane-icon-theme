@@ -21,7 +21,7 @@
 
 "use strict";
 
-const version = '0.983';
+const version = '0.985';
 const variants = [
 	['Plane','Gnome'],
 	['Plane','Dark','Gnomedark'],
