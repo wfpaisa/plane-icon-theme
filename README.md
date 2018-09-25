@@ -4,17 +4,9 @@
 
 
 
-
-
-
-
-**Currently in BETA**
-
-
-
 # Plane icon theme
 
-A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape/Gnome
+A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape/Gnome, more information in [Plane project](https://github.com/wfpaisa/plane)
 
 
 - Source icons in = `./src/variants/plane`  and `./src/variants/*` are all posible variants
