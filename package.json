@@ -22,16 +22,16 @@
   "homepage": "https://github.com/wfpaisa/plane-icon-theme#readme",
   "dependencies": {},
   "devDependencies": {
-    "async": "^2.6.0",
+    "async": "^2.6.1",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-foreach": "^0.1.0",
     "gulp-svgmin": "^1.2.4",
-    "gulp-watch": "^5.0.0",
-    "gulp-zip": "^4.1.0",
+    "gulp-watch": "^5.0.1",
+    "gulp-zip": "^4.2.0",
     "map-stream": "0.0.7",
     "through2": "^2.0.3",
-    "vinyl": "^2.0.2",
+    "vinyl": "^2.2.0",
     "xml2js": "^0.4.17"
   }
 }
