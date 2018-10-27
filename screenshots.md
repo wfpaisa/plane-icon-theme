@@ -14,6 +14,3 @@
 
 ![screenshot-07](./assets/screenshots/screenshot-07.png)
 
-![screenshot-08](./assets/screenshots/screenshot-08.png)
-
-![screenshot-08](./assets/screenshots/screenshot-09.png)
