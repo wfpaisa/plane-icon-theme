@@ -16,12 +16,12 @@
  *	along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.en.html>.
  *
  * @author    @wfpaisa
- * @copyright 2017 Plane icon theme
+ * @copyright 2018 Plane icon theme
  */
 
 "use strict";
 
-const version = '1.5';
+const version = '1.6';
 const variants = [
 	['Plane','Gnome'],
 	['Plane','Dark','Gnomedark'],
