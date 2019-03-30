@@ -13,7 +13,7 @@
    version="1.1"
    id="svg6"
    sodipodi:docname="document-open.svg"
-   inkscape:version="0.92.2 2405546, 2018-03-11">
+   inkscape:version="0.92.4 5da689c313, 2019-01-14">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -22,26 +22,26 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     pagecolor="#ffffff"
+     pagecolor="#373a41"
      bordercolor="#666666"
      borderopacity="1"
      objecttolerance="10"
      gridtolerance="10"
      guidetolerance="10"
-     inkscape:pageopacity="0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:window-width="640"
      inkscape:window-height="480"
      id="namedview8"
      showgrid="true"
      inkscape:zoom="31.161348"
-     inkscape:cx="8.6746026"
-     inkscape:cy="7.9378982"
+     inkscape:cx="9.2522413"
+     inkscape:cy="5.8198897"
      inkscape:current-layer="svg6">
     <inkscape:grid
        type="xygrid"
@@ -54,24 +54,14 @@
        type="text/css"
        id="current-color-scheme">
       .ColorScheme-Text {
-        color:#f2f2f2;
+        color:#afafaf;
       }
       </style>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#default_color"
-       id="linearGradient8185"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.66666663,0,0,0.66666667,50.847589,64.000001)"
-       x1="-153.4238"
-       y1="-84"
-       x2="-129.4238"
-       y2="-84" />
     <linearGradient
        id="default_color"
        osb:paint="solid">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
+         style="stop-color:#b0b0b0;stop-opacity:1;"
          offset="0"
          id="stop8106-6" />
     </linearGradient>
@@ -85,9 +75,19 @@
        y1="-436.5"
        x2="15.000001"
        y2="-436.5" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#default_color"
+       id="linearGradient846-3"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(67,514.00001)"
+       x1="3"
+       y1="-436.5"
+       x2="15.000001"
+       y2="-436.5" />
   </defs>
   <path
-     style="display:inline;opacity:0.63999999;vector-effect:none;fill:url(#linearGradient846);fill-opacity:1;stroke:none;stroke-width:0.12990442;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.96354167;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;enable-background:new;font-variant-east_asian:normal"
+     style="display:inline;opacity:1;vector-effect:none;fill:url(#linearGradient846);fill-opacity:1;stroke:none;stroke-width:0.12990442;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.96354167;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;enable-background:new"
      d="m 0,1 v 13 l 1,1 h 14 l 1,-1 V 4 L 15,3 H 8.9999997 L 7,1 Z M 8.9999997,4 H 15 V 14 H 1 V 5 h 6 z"
      id="path7809"
      inkscape:connector-curvature="0"
@@ -97,6 +97,6 @@
      inkscape:connector-curvature="0"
      id="path7811"
      d="m 2,6 v 7 l 12,-10e-6 V 5 H 8.9999997 L 7,6 Z"
-     style="display:inline;opacity:0.1;vector-effect:none;fill:url(#linearGradient8185);fill-opacity:1;stroke:none;stroke-width:0.13666186;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:fill markers stroke;enable-background:new"
+     style="display:inline;opacity:0.60431656;vector-effect:none;fill:url(#linearGradient846);fill-opacity:1;stroke:none;stroke-width:0.12990442;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.96354167;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;enable-background:new"
      inkscape:label="path7811" />
 </svg>

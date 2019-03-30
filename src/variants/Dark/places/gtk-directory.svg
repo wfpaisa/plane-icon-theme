@@ -14,7 +14,7 @@
    width="48"
    id="svg2"
    version="1.1"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
    sodipodi:docname="gtk-directory.svg"
    enable-background="new">
   <title
@@ -65,7 +65,7 @@
        id="16px-primary-color-0"
        osb:paint="solid">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
+         style="stop-color:#acacac;stop-opacity:1;"
          offset="0"
          id="stop8106" />
     </linearGradient>
@@ -420,9 +420,9 @@
      inkscape:window-height="480"
      id="namedview20"
      showgrid="true"
-     inkscape:zoom="32.578064"
-     inkscape:cx="-66.299758"
-     inkscape:cy="108.2649"
+     inkscape:zoom="8.2423077"
+     inkscape:cx="-45.966981"
+     inkscape:cy="103.3149"
      inkscape:current-layer="layer6"
      inkscape:snap-smooth-nodes="true"
      showguides="true"
@@ -777,7 +777,7 @@
        inkscape:label="icon"
        style="display:inline">
       <path
-         style="display:inline;opacity:0.64806866;vector-effect:none;fill:url(#linearGradient8185);fill-opacity:1;stroke:none;stroke-width:0.13666186;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:fill markers stroke;enable-background:new"
+         style="display:inline;opacity:1;vector-effect:none;fill:url(#linearGradient8185);fill-opacity:1;stroke:none;stroke-width:0.13666186;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:fill markers stroke;enable-background:new"
          d="m -72,-71 v 13 l 1,1 h 14 l 1,-1 v -10 l -1,-1 h -6 l -2,-2 z m 9,3 h 6 v 10 h -14 v -9 h 6 z"
          id="path7809"
          inkscape:connector-curvature="0"
@@ -787,7 +787,7 @@
          inkscape:connector-curvature="0"
          id="path7811"
          d="m -70,-66 v 7 l 12,-1e-5 V -67 h -5 l -2,1 z"
-         style="display:inline;opacity:0.111588;vector-effect:none;fill:url(#linearGradient8185);fill-opacity:1;stroke:none;stroke-width:0.13666186;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:fill markers stroke;enable-background:new"
+         style="display:inline;opacity:0.2;vector-effect:none;fill:url(#linearGradient8185);fill-opacity:1;stroke:none;stroke-width:0.13666186;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:fill markers stroke;enable-background:new"
          inkscape:label="path7811" />
     </g>
   </g>
