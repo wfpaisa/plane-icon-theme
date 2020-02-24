@@ -24,7 +24,7 @@ A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape
 ## Build
 Here [videos](https://goo.gl/VG1t8R)
 
-- Is necesary nodejs 7.0 +
+- Is necesary nodejs 8
 - `$ npm install`
 - `$ npm install --global gulp-cli`
 - `$ gulp`
