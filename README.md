@@ -82,7 +82,7 @@ folder.svg
 - (Breeze)[https://github.com/KDE/breeze-icons]
 - (Arc Icon Theme)[https://github.com/fc8855/arc-icons]
 - (Paper Icon Theme)[https://github.com/snwh/paper-icon-theme]
-
+- (Os catalina Icon Theme)[https://github.com/zayronxio/Os-Catalina-icons]
 And all those designs that served as inspiration
 
 

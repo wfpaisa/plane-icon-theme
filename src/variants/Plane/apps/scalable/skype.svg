@@ -14,7 +14,7 @@
    height="1024"
    id="svg2"
    version="1.1"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
    sodipodi:docname="skype.svg">
   <defs
      id="defs4">
@@ -97,7 +97,7 @@
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient5423"
+       xlink:href="#h"
        id="linearGradient6197"
        gradientUnits="userSpaceOnUse"
        x1="99.036476"
@@ -150,6 +150,335 @@
          stdDeviation="1.7822209"
          id="feGaussianBlur1040" />
     </filter>
+    <filter
+       id="p"
+       width="1.3280001"
+       height="1.229"
+       x="-0.16399999"
+       y="-0.102"
+       filterUnits="objectBoundingBox">
+      <feOffset
+         dy="1"
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset102" />
+      <feGaussianBlur
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         stdDeviation="3"
+         id="feGaussianBlur104" />
+      <feColorMatrix
+         in="shadowBlurOuter1"
+         result="shadowMatrixOuter1"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"
+         id="feColorMatrix106" />
+      <feOffset
+         dy="1"
+         in="SourceAlpha"
+         result="shadowOffsetOuter2"
+         id="feOffset108" />
+      <feGaussianBlur
+         in="shadowOffsetOuter2"
+         result="shadowBlurOuter2"
+         stdDeviation=".5"
+         id="feGaussianBlur110" />
+      <feColorMatrix
+         in="shadowBlurOuter2"
+         result="shadowMatrixOuter2"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"
+         id="feColorMatrix112" />
+      <feMerge
+         id="feMerge118">
+        <feMergeNode
+           in="shadowMatrixOuter1"
+           id="feMergeNode114" />
+        <feMergeNode
+           in="shadowMatrixOuter2"
+           id="feMergeNode116" />
+      </feMerge>
+    </filter>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       id="r"
+       x1="0.29468"
+       x2="0.97962999"
+       y1="0.5"
+       y2="0.5"
+       gradientTransform="translate(0,-28.36218)">
+      <stop
+         offset="0%"
+         stop-color="#F0F0F0"
+         id="stop96" />
+      <stop
+         offset="100%"
+         stop-color="#FFF"
+         id="stop98" />
+    </linearGradient>
+    <filter
+       id="o"
+       width="1.007"
+       height="1.007"
+       x="-0.003"
+       y="-0.003"
+       filterUnits="objectBoundingBox">
+      <feOffset
+         dx="-1"
+         dy="-1"
+         in="SourceAlpha"
+         result="shadowOffsetInner1"
+         id="feOffset89" />
+      <feComposite
+         k4="0"
+         k1="0"
+         in="shadowOffsetInner1"
+         in2="SourceAlpha"
+         k2="-1"
+         k3="1"
+         operator="arithmetic"
+         result="shadowInnerInner1"
+         id="feComposite91" />
+      <feColorMatrix
+         in="shadowInnerInner1"
+         values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.05 0"
+         id="feColorMatrix93" />
+    </filter>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       id="h"
+       x1="1.01173"
+       x2="0.1225"
+       y1="1"
+       y2="0.063490003"
+       gradientTransform="translate(0,-28.36218)">
+      <stop
+         offset="0"
+         stop-color="#006AF3"
+         id="stop42"
+         style="stop-color:#0596ff;stop-opacity:1;" />
+      <stop
+         offset="1"
+         stop-color="#025FAD"
+         id="stop44"
+         style="stop-color:#0255c9;stop-opacity:1;" />
+    </linearGradient>
+    <pattern
+       id="j"
+       width="512"
+       height="512"
+       x="-449"
+       y="-448"
+       patternUnits="userSpaceOnUse">
+      <use
+         xlink:href="#b"
+         id="use48" />
+    </pattern>
+    <filter
+       id="k"
+       width="1.33"
+       height="1.33"
+       x="-0.16500001"
+       y="-0.16500001"
+       filterUnits="objectBoundingBox">
+      <feOffset
+         dx="-1"
+         dy="-1"
+         in="SourceAlpha"
+         result="shadowOffsetInner1"
+         id="feOffset51" />
+      <feComposite
+         k4="0"
+         k1="0"
+         in="shadowOffsetInner1"
+         in2="SourceAlpha"
+         k2="-1"
+         k3="1"
+         operator="arithmetic"
+         result="shadowInnerInner1"
+         id="feComposite53" />
+      <feColorMatrix
+         in="shadowInnerInner1"
+         result="shadowMatrixInner1"
+         values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.05 0"
+         id="feColorMatrix55" />
+      <feGaussianBlur
+         in="SourceAlpha"
+         result="shadowBlurInner2"
+         stdDeviation="10"
+         id="feGaussianBlur57" />
+      <feOffset
+         dy="11"
+         in="shadowBlurInner2"
+         result="shadowOffsetInner2"
+         id="feOffset59" />
+      <feComposite
+         k4="0"
+         k1="0"
+         in="shadowOffsetInner2"
+         in2="SourceAlpha"
+         k2="-1"
+         k3="1"
+         operator="arithmetic"
+         result="shadowInnerInner2"
+         id="feComposite61" />
+      <feColorMatrix
+         in="shadowInnerInner2"
+         result="shadowMatrixInner2"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.14 0"
+         id="feColorMatrix63" />
+      <feOffset
+         dx="1"
+         dy="1"
+         in="SourceAlpha"
+         result="shadowOffsetInner3"
+         id="feOffset65" />
+      <feComposite
+         k4="0"
+         k1="0"
+         in="shadowOffsetInner3"
+         in2="SourceAlpha"
+         k2="-1"
+         k3="1"
+         operator="arithmetic"
+         result="shadowInnerInner3"
+         id="feComposite67" />
+      <feColorMatrix
+         in="shadowInnerInner3"
+         result="shadowMatrixInner3"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"
+         id="feColorMatrix69" />
+      <feMerge
+         id="feMerge77">
+        <feMergeNode
+           in="shadowMatrixInner1"
+           id="feMergeNode71" />
+        <feMergeNode
+           in="shadowMatrixInner2"
+           id="feMergeNode73" />
+        <feMergeNode
+           in="shadowMatrixInner3"
+           id="feMergeNode75" />
+      </feMerge>
+    </filter>
+    <filter
+       id="g"
+       width="1.33"
+       height="1.33"
+       x="-0.16500001"
+       y="-0.16500001"
+       filterUnits="objectBoundingBox">
+      <feGaussianBlur
+         in="SourceAlpha"
+         result="shadowBlurInner1"
+         stdDeviation="7"
+         id="feGaussianBlur11" />
+      <feOffset
+         dx="6"
+         dy="7"
+         in="shadowBlurInner1"
+         result="shadowOffsetInner1"
+         id="feOffset13" />
+      <feComposite
+         k4="0"
+         k1="0"
+         in="shadowOffsetInner1"
+         in2="SourceAlpha"
+         k2="-1"
+         k3="1"
+         operator="arithmetic"
+         result="shadowInnerInner1"
+         id="feComposite15" />
+      <feColorMatrix
+         in="shadowInnerInner1"
+         result="shadowMatrixInner1"
+         values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.15 0"
+         id="feColorMatrix17" />
+      <feGaussianBlur
+         in="SourceAlpha"
+         result="shadowBlurInner2"
+         stdDeviation="10"
+         id="feGaussianBlur19" />
+      <feOffset
+         dy="11"
+         in="shadowBlurInner2"
+         result="shadowOffsetInner2"
+         id="feOffset21" />
+      <feComposite
+         k4="0"
+         k1="0"
+         in="shadowOffsetInner2"
+         in2="SourceAlpha"
+         k2="-1"
+         k3="1"
+         operator="arithmetic"
+         result="shadowInnerInner2"
+         id="feComposite23" />
+      <feColorMatrix
+         in="shadowInnerInner2"
+         result="shadowMatrixInner2"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.14 0"
+         id="feColorMatrix25" />
+      <feOffset
+         dx="1"
+         dy="1"
+         in="SourceAlpha"
+         result="shadowOffsetInner3"
+         id="feOffset27" />
+      <feComposite
+         k4="0"
+         k1="0"
+         in="shadowOffsetInner3"
+         in2="SourceAlpha"
+         k2="-1"
+         k3="1"
+         operator="arithmetic"
+         result="shadowInnerInner3"
+         id="feComposite29" />
+      <feColorMatrix
+         in="shadowInnerInner3"
+         result="shadowMatrixInner3"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"
+         id="feColorMatrix31" />
+      <feMerge
+         id="feMerge39">
+        <feMergeNode
+           in="shadowMatrixInner1"
+           id="feMergeNode33" />
+        <feMergeNode
+           in="shadowMatrixInner2"
+           id="feMergeNode35" />
+        <feMergeNode
+           in="shadowMatrixInner3"
+           id="feMergeNode37" />
+      </feMerge>
+    </filter>
+    <pattern
+       id="f"
+       width="512"
+       height="512"
+       x="-512"
+       y="-512"
+       patternUnits="userSpaceOnUse">
+      <use
+         xlink:href="#a"
+         id="use8" />
+    </pattern>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       id="d"
+       x1="0.53605002"
+       x2="0.29268"
+       y1="0.74607003"
+       y2="0.02863"
+       gradientTransform="matrix(6.293207,0,0,6.293207,-38.008726,-65.320939)">
+      <stop
+         offset="0%"
+         stop-color="#0359DE"
+         id="stop2" />
+      <stop
+         offset="100%"
+         stop-color="#0045A7"
+         id="stop4" />
+    </linearGradient>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -159,8 +488,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.546875"
-     inkscape:cx="512"
-     inkscape:cy="512"
+     inkscape:cx="512.29452"
+     inkscape:cy="496.06731"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -172,7 +501,8 @@
      inkscape:snap-from-guide="true"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:pagecheckerboard="true">
+     inkscape:pagecheckerboard="true"
+     inkscape:snap-global="false">
     <sodipodi:guide
        position="0,0"
        orientation="0,200"
@@ -205,7 +535,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
