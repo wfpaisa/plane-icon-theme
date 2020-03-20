@@ -21,7 +21,7 @@
 
 "use strict";
 
-const version = '2.0';
+const version = '3.34';
 const variants = [
 	['Plane','Gnome'],
 	['Plane','Dark','Gnomedark'],
@@ -37,6 +37,9 @@ const variants = [
 
 	['Plane','Gnome', 'Ubuntu'],
 	['Plane','Dark','Gnomedark', 'Ubuntudark'],
+
+	['Plane','Gnome', 'Neon'],
+	['Plane','Dark','Gnomedark', 'Neondark'],
 
 	// ['Plane','Kde'],
 	// ['Plane','Dark','Kdedark']
