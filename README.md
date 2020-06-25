@@ -6,10 +6,10 @@
 
 # Plane icon theme
 
-A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape/Gnome, more information in [Plane project](https://github.com/wfpaisa/plane)
+A simple iconset, preferably used in dark versions of Gnome. Love/Arch/Inkscape/Gnome, more information in [Plane project](https://github.com/wfpaisa/plane).
 
 
-- Source icons in = `./src/variants/plane`  and `./src/variants/*` are all posible variants
+- Source icons in = `./src/variants/plane`  and `./src/variants/*` are all possible variants
 
 - Render icons in = `./build/variants/*` and zip in `./build/zip-variants/*`
 
@@ -79,18 +79,20 @@ folder.svg
 
 ## Thanks to
 
-- (Breeze)[https://github.com/KDE/breeze-icons]
-- (Arc Icon Theme)[https://github.com/fc8855/arc-icons]
-- (Paper Icon Theme)[https://github.com/snwh/paper-icon-theme]
-- (Os catalina Icon Theme)[https://github.com/zayronxio/Os-Catalina-icons]
-And all those designs that served as inspiration
+- [Breeze](https://github.com/KDE/breeze-icons)
+- [Arc Icon Theme](https://github.com/fc8855/arc-icons)
+- [Paper Icon Theme](https://github.com/snwh/paper-icon-theme)
+- [Os catalina Icon Theme](https://github.com/zayronxio/Os-Catalina-icons)
+
+And all other designs that served as inspiration!
 
 
 ## Reviews
-- (desdelinux)[https://blog.desdelinux.net/plane-moderno-paquete-iconos-gnome/]
-- (Charlie Henson)[https://www.youtube.com/watch?v=9s5H3sbNgAU&t=27s]
+- [desdelinux](https://blog.desdelinux.net/plane-moderno-paquete-iconos-gnome/)
+- [Charlie Henson](https://www.youtube.com/watch?v=9s5H3sbNgAU&t=27s)
 
 ## Todo
-- https://trello.com/b/m7BIbGZb/plane-icons
+
+- [Trello](https://trello.com/b/m7BIbGZb/plane-icons)
 
 License: GPLv3
