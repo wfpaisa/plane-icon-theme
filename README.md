@@ -6,22 +6,25 @@
 
 # Plane icon theme
 
-A simple iconset, preferably used in dark versions of Gnome.  Love/Arch/Inkscape/Gnome, more information in [Plane project](https://github.com/wfpaisa/plane)
+A simple iconset, preferably used in dark versions of Gnome. Love/Arch/Inkscape/Gnome, more information in [Plane project](https://github.com/wfpaisa/plane).
 
-
-- Source icons in = `./src/variants/plane`  and `./src/variants/*` are all posible variants
+- Source icons in = `./src/variants/plane`  and `./src/variants/*` are all possible variants
 
 - Render icons in = `./build/variants/*` and zip in `./build/zip-variants/*`
 
+![Screen](./assets/screenshots/screenshot.png)
+
+[see more screenshots](./screenshots.md)
 
 ## Installation
 
-1. Downlad the lasted version in `./build/zip-variants/`
+1. Download the lasted version in `./build/zip-variants/`
 2. Unzip in `[USER_FOLDER]/.local/share/icons`
 3. Change icon set with Gnome Tweak Tool
 
 
 ## Build
+
 Here [videos](https://goo.gl/VG1t8R)
 
 - Is necesary nodejs 8
@@ -47,11 +50,13 @@ $ gulp watch -PlaneGnome
 
 ```
 
-#### ERRORs
+#### Potential Errors
+
 - "Error: watch /xxx/xxx ENOSPC"  Solution -> `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`  [more info](https://github.com/gulpjs/gulp/issues/217) 
 
 
 ### Estructure file
+
 `./assets/templates/*` contain it the templates with the structure, all templates should have the this structure:
 
 [tag] => inkscape layer
@@ -73,24 +78,20 @@ folder.svg
 - Light `$ sudo cp ./build/libreoffice-breeze/images_breeze.zip /usr/lib/libreoffice/share/config/images_breeze.zip` Then open Libreoffice and go to Tools->Options->View and choose Breeze.
 - Dark `$ sudo cp ./build/libreoffice-breeze/images_breeze_dark.zip /usr/lib/libreoffice/share/config/images_breeze_dark.zip` Then open Libreoffice and go to Tools->Options->View and choose Breeze_dark.
 
-![Screen](./assets/screenshots/screenshot.png)
-
-[see more screenshots](./screenshots.md)
-
 ## Thanks to
 
-- (Breeze)[https://github.com/KDE/breeze-icons]
-- (Arc Icon Theme)[https://github.com/fc8855/arc-icons]
-- (Paper Icon Theme)[https://github.com/snwh/paper-icon-theme]
-- (Os catalina Icon Theme)[https://github.com/zayronxio/Os-Catalina-icons]
-And all those designs that served as inspiration
+- [Breeze](https://github.com/KDE/breeze-icons)
+- [Arc Icon Theme](https://github.com/fc8855/arc-icons)
+- [Paper Icon Theme](https://github.com/snwh/paper-icon-theme)
+- [macOS Catalina Icon Theme](https://github.com/zayronxio/Os-Catalina-icons)
+
+And all other designs that served as inspiration!
 
 
 ## Reviews
-- (desdelinux)[https://blog.desdelinux.net/plane-moderno-paquete-iconos-gnome/]
-- (Charlie Henson)[https://www.youtube.com/watch?v=9s5H3sbNgAU&t=27s]
+- [desdelinux](https://blog.desdelinux.net/plane-moderno-paquete-iconos-gnome/)
+- [Charlie Henson](https://www.youtube.com/watch?v=9s5H3sbNgAU&t=27s)
 
 ## Todo
-- https://trello.com/b/m7BIbGZb/plane-icons
 
-License: GPLv3
+- [Trello](https://trello.com/b/m7BIbGZb/plane-icons)
