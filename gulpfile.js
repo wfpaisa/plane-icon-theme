@@ -1,6 +1,6 @@
 /**
  * 	Plane icon theme
- *	Copyright (C) 2017  wfpaisa
+ *	Copyright (C) 2023  wfpaisa
  *
  *	This program is free software: you can redistribute it and/or modify
  *	it under the terms of the GNU General Public License as published by
@@ -16,12 +16,12 @@
  *	along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.en.html>.
  *
  * @author    @wfpaisa
- * @copyright 2018 Plane icon theme
+ * @copyright 2023 Plane icon theme
  */
 
 "use strict";
 
-const version = '3.34';
+const version = '4.0';
 const variants = [
 	['Plane','Gnome'],
 	['Plane','Dark','Gnomedark'],
