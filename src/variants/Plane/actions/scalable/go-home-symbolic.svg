@@ -1,8 +1,4 @@
-<svg height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-    <g fill="gray">
-        <path color="#000" d="M14 5V3h-2.002z" overflow="visible" style="marker:none"/>
-        <path d="M2 7v8h9v-1H3V6.333zm11.002-1L13 15h1V7z" font-family="Ubuntu" font-size="15" font-weight="400" letter-spacing="0" style="line-height:125%;-inkscape-font-specification:Ubuntu;text-align:center" text-anchor="middle" word-spacing="0"/>
-        <path d="M8 8.986a8.47 8.47 0 0 1 .607-.122 5.24 5.24 0 0 1 .872-.064c.295 0 .54.043.735.129.195.08.35.197.465.35.119.147.202.326.25.535.047.21.071.44.071.693V14.2H8z" font-family="Ubuntu" font-weight="400" letter-spacing="0" style="line-height:125%;-inkscape-font-specification:Ubuntu;text-align:end" text-anchor="end" word-spacing="0"/>
-        <path color="#000" d="M8 .293L.146 8.146l.708.708L8 1.707l7.146 7.147.708-.708z" fill-rule="evenodd" font-family="sans-serif" font-weight="400" overflow="visible" style="line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal" white-space="normal"/>
-    </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="16px" viewBox="0 0 16 16" width="16px" xmlns="http://www.w3.org/2000/svg">
+    <path d="m 8 1 c -0.207031 0 -0.410156 0.066406 -0.578125 0.1875 l -7 5 c -0.453125 0.320312 -0.554687 0.941406 -0.234375 1.394531 c 0.1875 0.261719 0.488281 0.417969 0.8125 0.417969 v 4 c 0 1.644531 1.355469 3 3 3 h 8 c 1.644531 0 3 -1.320312 3 -3 v -4 c 0.324219 0 0.625 -0.15625 0.816406 -0.417969 c 0.320313 -0.453125 0.214844 -1.074219 -0.234375 -1.394531 l -7 -5 c -0.167969 -0.121094 -0.375 -0.1875 -0.582031 -0.1875 z m 0 2.230469 l 5 3.570312 v 5.199219 c 0 0.5625 -0.4375 1 -1 1 h -3 v -4 c 0 -0.554688 -0.445312 -1 -1 -1 h -1 c -0.554688 0 -1 0.445312 -1 1 v 4 h -2 c -0.5625 0 -1 -0.4375 -1 -1 v -5.199219 z m 0 0" fill="#2e3436"/>
 </svg>

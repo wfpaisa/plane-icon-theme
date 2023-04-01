@@ -1,6 +1,7 @@
-<svg height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-    <g color="#000" font-weight="400" font-family="sans-serif" white-space="normal" fill="gray">
-        <path d="M0 1v13h6c.975 0 1.602.8 1.602.8l.39.518.4-.51s.65-.79 1.608-.808v-1h-.008c-1.025.015-1.624.478-1.988.824A2.791 2.791 0 0 0 6 13H1V2h5c.983 0 1.6.799 1.6.799l.4.535.4-.535S9.017 2 10 2v7l3-1V1h-3c-1.036 0-1.635.465-2 .82C7.635 1.465 7.036 1 6 1zm14 0v1h1v8h1V1zM3 4v1h3V4zm0 2v1h3V6zm0 2v1h3V8zm0 2v1h3v-1z" style="line-height:normal;font-variant-ligatures:none;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;shape-padding:0;isolation:auto;mix-blend-mode:normal;marker:none" overflow="visible"/>
-        <path d="M13 11v2h-2v1h2v2h1v-2h2v-1h-2v-2z" style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;isolation:auto;mix-blend-mode:normal;marker:none" overflow="visible"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="16px" viewBox="0 0 16 16" width="16px" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#2e3436">
+        <path d="m 3.523438 0 c -1.089844 0 -1.914063 0.679688 -2.230469 1.292969 c -0.3125 0.617187 -0.300781 1.207031 -0.300781 1.207031 v 12.117188 l 1.421874 -0.710938 c 0.011719 -0.003906 0.023438 -0.007812 0.03125 -0.011719 l 4 -2 c 0.496094 -0.246093 0.695313 -0.847656 0.449219 -1.339843 c -0.246093 -0.496094 -0.847656 -0.695313 -1.34375 -0.449219 l -1.550781 0.777343 v -0.003906 l -1.007812 0.503906 v -6.882812 s 0.003906 -0.015625 0.007812 -0.039062 v -1.460938 c 0 -0.554688 0.445312 -1 1 -1 h 4 c 0.554688 0 1 0.445312 1 1 v 3 c 0 0.550781 0.449219 1 1 1 s 1 -0.449219 1 -1 c 0 -0.035156 0 -0.074219 -0.007812 -0.109375 v -3.390625 s 0.015624 -0.582031 -0.292969 -1.199219 c -0.304688 -0.613281 -1.121094 -1.300781 -2.207031 -1.300781 z m 0 0" fill-rule="evenodd"/>
+        <path d="m 11 8 v 3 h -3 v 2 h 3 v 3 h 2 v -3 h 3 v -2 h -3 v -3 z m 0 0"/>
     </g>
 </svg>
